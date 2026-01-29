@@ -47,7 +47,7 @@ window.onclick = function (event) {
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closeModal();
-    }[j]
+    } [j]
 });
 
 // Отправка формы в Telegram
