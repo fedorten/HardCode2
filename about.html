@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - HardCode</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>HardCode</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="courses.html">Курс</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>О школе HardCode</h1>
+            <p>Создаем профессиональных разработчиков через реальную практику</p>
+        </section>
+
+        <section class="about-mission">
+            <h2>Наша миссия</h2>
+            <p>HardCode - это онлайн школа для взрослых, которые реально хотят научиться программировать и найти работу. Мы верим, что лучший способ изучить программирование - это погрузиться в реальную разработку с первых дней обучения.</p>
+            <p>В отличие от традиционных курсов, мы не тратим время на теорию ради теории. Наши студенты сразу приступают к решению боевых задач и работают над реальными проектами.</p>
+        </section>
+
+        <section class="approach">
+            <h2>Наш подход</h2>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h3>Только практика</h3>
+                    <p>Обучение через решение реальных задач, а не заучивание теории</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Для взрослых</h3>
+                    <p>Мы понимаем, что у взрослых студентов есть цели и мотивация стать профессионалами</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Реальный опыт</h3>
+                    <p>Стажировка в IT-компаниях с работой над настоящими продуктами</p>
+                </div>
+                <div class="approach-item">
+                    <h3>Гарантия результата</h3>
+                    <p>Наши выпускники находят работу с зарплатой от 200 000 рублей</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="process">
+            <h2>Как проходит обучение</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>База (до 1 месяца)</h3>
+                        <p>Освоение основ программирования для тех, кто начинает с нуля</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Будкэмп (2 недели)</h3>
+                        <p>Интенсивное решение боевых задач по 4 часа в день</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Стажировка (2 месяца)</h3>
+                        <p>Работа в реальной IT-компании над настоящими проектами</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2>Результаты наших студентов</h2>
+            <p>Наши выпускники успешно трудоустраиваются ведущими IT-компаниями и начинают свою карьеру с зарплаты от 200 000 рублей. Реальный опыт работы над проектами во время стажировки становится их главным преимуществом на рынке труда.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Присоединяйтесь к HardCode</h2>
+            <p>Начните свой путь в профессию уже сегодня</p>
+            <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+        </section>
+    </main>
+
+    <!-- Модальное окно формы -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Запишитесь на курс</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telegram">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="level">Ваш уровень:</label>
+                    <select id="level" name="level">
+                        <option value="beginner">Полный новичок</option>
+                        <option value="basic">Есть базовые знания</option>
+                        <option value="intermediate">Уже писал код</option>
+                        <option value="advanced">Опытный разработчик</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="goal">Ваша цель:</label>
+                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком"></textarea>
+                </div>
+                
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>HardCode</h4>
+                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="courses.html">Курс</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Информация</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="offer.html">Договор оферты</a></li>
+                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 HardCode. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

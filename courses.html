@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс - HardCode</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>HardCode</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="courses.html">Курс</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <h1>Хардкорная бэкэнд разработка</h1>
+            <p>Станьте профессиональным backend-разработчиком за 3-4 месяца</p>
+        </section>
+
+        <section class="course-details">
+            <h2>О курсе</h2>
+            <p>Наш курс предназначен для взрослых, которые серьезно настроены научиться программировать и найти работу в IT. Мы не учим теории ради теории - мы даем реальные навыки через практику на боевых проектах.</p>
+            
+            <h3>Что вы изучите:</h3>
+            <ul>
+                <li>Основы программирования и алгоритмы</li>
+                <li>Базы данных (SQL, NoSQL)</li>
+                <li>API и веб-сервисы</li>
+                <li>Фреймворки и технологии бэкэнда</li>
+                <li>Версионный контроль (Git)</li>
+                <li>Тестирование и отладка кода</li>
+            </ul>
+
+            <h3>Формат обучения:</h3>
+            <div class="format-grid">
+                <div class="format-item">
+                    <h4>Индивидуальные занятия</h4>
+                    <p>Персональный подход к каждому ученику</p>
+                </div>
+                <div class="format-item">
+                    <h4>Будкэмп</h4>
+                    <p>Интенсивное решение реальных задач по 4 часа в день</p>
+                </div>
+                <div class="format-item">
+                    <h4>Стажировка</h4>
+                    <p>Работа над настоящими IT-проектами в реальных компаниях</p>
+                </div>
+            </div>
+
+            <h3>Результат:</h3>
+            <p>После окончания курса вы будете способны работать backend-разработчиком с зарплатой от 200 000 рублей. У вас будет реальный портфолио с проектами и опыт работы в IT-компании.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Готовы начать?</h2>
+            <p>Запишитесь на курс и сделайте первый шаг в профессию</p>
+            <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+        </section>
+    </main>
+
+    <!-- Модальное окно формы -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Запишитесь на курс</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telegram">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="level">Ваш уровень:</label>
+                    <select id="level" name="level">
+                        <option value="beginner">Полный новичок</option>
+                        <option value="basic">Есть базовые знания</option>
+                        <option value="intermediate">Уже писал код</option>
+                        <option value="advanced">Опытный разработчик</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="goal">Ваша цель:</label>
+                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком"></textarea>
+                </div>
+                
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>HardCode</h4>
+                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="courses.html">Курс</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Информация</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="offer.html">Договор оферты</a></li>
+                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 HardCode. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

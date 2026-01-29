@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HardCode - Онлайн школа хардкорной бэкэнд разработки</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>HardCode</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="courses.html">Курс</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>HardCode - Онлайн школа для взрослых</h1>
+                <p>Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 200к</p>
+                <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+            </div>
+        </section>
+
+        <section class="course-info">
+            <h2>Хардкорная бэкэнд разработка</h2>
+            <p>Интенсивный курс для тех, кто хочет стать профессиональным backend-разработчиком. За 3-4 месяца вы получите реальный опыт и сможете работать с зарплатой от 200к.</p>
+            
+            <div class="learning-path">
+                <h3>Ваш путь в IT:</h3>
+                <div class="path-step">
+                    <strong>1 месяц:</strong> Освоение а basis (если вы полный новичок)
+                </div>
+                <div class="path-step">
+                    <strong>2 недели:</strong> Будкэмп - решение реальных боевых задач по 4 часа в день
+                </div>
+                <div class="path-step">
+                    <strong>2 месяца:</strong> Стажировка в реальной IT-компании с разработкой настоящих продуктов
+                </div>
+            </div>
+        </section>
+
+        <section class="packages">
+            <h2>Выберите свой пакет:</h2>
+            <div class="package-cards">
+                <div class="package-card">
+                    <h3>Базовый</h3>
+                    <div class="price">Цена по запросу</div>
+                    <ul>
+                        <li>Индивидуальные занятия</li>
+                        <li>Основы программирования</li>
+                        <li>Поддержка куратора</li>
+                    </ul>
+                    <button onclick="selectPackage('Базовый')">Выбрать пакет</button>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Продвинутый</h3>
+                    <div class="price">Цена по запросу</div>
+                    <ul>
+                        <li>Все из базового пакета</li>
+                        <li>Будкэмп с боевыми задачами</li>
+                        <li>Стажировка в IT-компании</li>
+                    </ul>
+                    <button onclick="selectPackage('Продвинутый')">Выбрать пакет</button>
+                </div>
+                
+                <div class="package-card">
+                    <h3>VIP</h3>
+                    <div class="price">Цена по запросу</div>
+                    <ul>
+                        <li>Все из продвинутого пакета</li>
+                        <li>Персональное сопровождение</li>
+                        <li>Гарантия трудоустройства</li>
+                    </ul>
+                    <button onclick="selectPackage('VIP')">Выбрать пакет</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно формы -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Запишитесь на курс</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telegram">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="level">Ваш уровень:</label>
+                    <select id="level" name="level">
+                        <option value="beginner">Полный новичок</option>
+                        <option value="basic">Есть базовые знания</option>
+                        <option value="intermediate">Уже писал код</option>
+                        <option value="advanced">Опытный разработчик</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="goal">Ваша цель:</label>
+                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="package">Выбранный пакет:</label>
+                    <input type="text" id="package" name="package" readonly>
+                </div>
+                
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>HardCode</h4>
+                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="courses.html">Курс</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Информация</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="offer.html">Договор оферты</a></li>
+                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 HardCode. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
