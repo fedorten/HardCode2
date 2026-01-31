@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цены - HardCode</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -13,6 +15,7 @@
                 <h1>HardCode</h1>
             </div>
             <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="prices.html">Цены</a></li>
                 <li><a href="courses.html">Курс</a></li>
                 <li><a href="about.html">О нас</a></li>
@@ -21,56 +24,23 @@
     </header>
 
     <main>
-        <section class="prices-hero">
-            <h1>Выберите свой пакет обучения</h1>
-            <p>Три варианта для разных уровней подготовки и целей</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Инвистируй в своё будущее</h1>
+                <p>Цена курсов от 11 до 118 тысяч рублей. Станьте программистом, или мы вернем вам деньги</p>
+            </div>
         </section>
 
         <section class="packages-detailed">
-            <div class="package-card featured">
-                <div class="package-header">
-                    <h3>VIP</h3>
-                    <div class="price-tag">Цена по запросу</div>
-                    <span class="recommended">Рекомендуем</span>
-                </div>
-                <div class="package-content">
-                    <ul class="features">
-                        <li>✓ Все из продвинутого пакета</li>
-                        <li>✓ Персональное сопровождение на протяжении всего обучения</li>
-                        <li>✓ Гарантия трудоустройства</li>
-                        <li>✓ Помощь с резюме и собеседованиями</li>
-                        <li>✓ Доступ к закрытому сообществу выпускников</li>
-                        <li>✓ Пожизненная поддержка ментора</li>
-                    </ul>
-                    <button class="select-btn" onclick="selectPackage('VIP')">Выбрать VIP</button>
-                </div>
-            </div>
 
             <div class="package-card">
                 <div class="package-header">
-                    <h3>Продвинутый</h3>
+                    <h3>Базовый минимум</h3>
                     <div class="price-tag">Цена по запросу</div>
                 </div>
                 <div class="package-content">
                     <ul class="features">
-                        <li>✓ Все из базового пакета</li>
-                        <li>✓ Будкэмп с боевыми задачами</li>
-                        <li>✓ Стажировка в IT-компании (2 месяца)</li>
-                        <li>✓ Работа над реальными проектами</li>
-                        <li>✓ Рекомендательные письма</li>
-                    </ul>
-                    <button class="select-btn" onclick="selectPackage('Продвинутый')">Выбрать продвинутый</button>
-                </div>
-            </div>
-
-            <div class="package-card">
-                <div class="package-header">
-                    <h3>Базовый</h3>
-                    <div class="price-tag">Цена по запросу</div>
-                </div>
-                <div class="package-content">
-                    <ul class="features">
-                        <li>✓ Индивидуальные занятия с ментором</li>
+                        <li>✓ Индивидуальные занятия с ментором 1 месяц</li>
                         <li>✓ Основы программирования</li>
                         <li>✓ Поддержка куратора</li>
                         <li>✓ Доступ к учебным материалам</li>
@@ -79,6 +49,39 @@
                     <button class="select-btn" onclick="selectPackage('Базовый')">Выбрать базовый</button>
                 </div>
             </div>
+
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>База</h3>
+                    <div class="price-tag">Цена по запросу</div>
+                </div>
+                <div class="package-content">
+                    <span class="recommended">Рекомендуем</span>
+                    <ul class="features">
+
+                        <li>✓ Все из предыдущего пакета</li>
+                        <li>✓ Будкэмп с боевыми задачами</li>
+                        <li>✓ Стажировка в IT-компании (2 месяца)</li>
+                        <li>✓ Работа над реальными проектами</li>
+                    </ul>
+                    <button class="select-btn" onclick="selectPackage('Продвинутый')">Выбрать продвинутый</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Senior</h3>
+                    <div class="price-tag">Цена по запросу</div>
+                </div>
+                <div class="package-content">
+                    <ul class="features">
+                        <li>✓ Все из предыдущего пакета</li>
+                        <li>✓ Гарантия трудоустройства</li>
+                        <li>✓ Помощь с резюме и собеседованиями</li>
+                    </ul>
+                    <button class="select-btn" onclick="selectPackage('VIP')">Выбрать VIP</button>
+                </div>
+            </div>
+
         </section>
 
         <section class="comparison">
@@ -148,12 +151,12 @@
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="telegram">Telegram username:</label>
                     <input type="text" id="telegram" name="telegram" placeholder="@username" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="level">Ваш уровень:</label>
                     <select id="level" name="level">
@@ -163,17 +166,18 @@
                         <option value="advanced">Опытный разработчик</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="goal">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком"></textarea>
+                    <textarea id="goal" name="goal" rows="3"
+                        placeholder="Например: найти работу backend-разработчиком"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="package">Выбранный пакет:</label>
                     <input type="text" id="package" name="package" readonly>
                 </div>
-                
+
                 <button type="submit">Отправить заявку</button>
             </form>
         </div>
@@ -185,7 +189,7 @@
                 <h4>HardCode</h4>
                 <p>Онлайн школа хардкорной бэкэнд разработки</p>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Навигация</h4>
                 <ul>
@@ -194,7 +198,7 @@
                     <li><a href="about.html">О нас</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Информация</h4>
                 <ul>
@@ -205,12 +209,13 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>&copy; 2024 HardCode. Все права защищены.</p>
+            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

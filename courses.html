@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курс - HardCode</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -13,6 +15,7 @@
                 <h1>HardCode</h1>
             </div>
             <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="prices.html">Цены</a></li>
                 <li><a href="courses.html">Курс</a></li>
                 <li><a href="about.html">О нас</a></li>
@@ -21,15 +24,23 @@
     </header>
 
     <main>
-        <section class="course-hero">
-            <h1>Хардкорная бэкэнд разработка</h1>
-            <p>Станьте профессиональным backend-разработчиком за 3-4 месяца</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Хардкорная Backend разработка</h1>
+                <p>Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 140к</p>
+                <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+            </div>
         </section>
 
         <section class="course-details">
             <h2>О курсе</h2>
-            <p>Наш курс предназначен для взрослых, которые серьезно настроены научиться программировать и найти работу в IT. Мы не учим теории ради теории - мы даем реальные навыки через практику на боевых проектах.</p>
-            
+            <p>Наш курс предназначен для взрослых, которые серьезно настроены научиться программировать и найти работу в
+                IT. Мы не учим теории и не даём простых заданий - мы даем реальные навыки через практику на боевых
+                проектах.<br><br>
+                Мы работаем над качеством, а не над колличеством - поэтому у нас ровно один курс, который
+                подобно бриллианту вытачиватся уже больше 4х лет, чтобы дать максимальное качество материала и находть
+                лучшие стажировки для учеников</p>
+
             <h3>Что вы изучите:</h3>
             <ul>
                 <li>Основы программирования и алгоритмы</li>
@@ -44,20 +55,28 @@
             <div class="format-grid">
                 <div class="format-item">
                     <h4>Индивидуальные занятия</h4>
-                    <p>Персональный подход к каждому ученику</p>
+                    <p>Занятия 1 на 1 с отличными преподавателями программирования два раза в неделю. Индивидуальные
+                        занятия(подтверждено рядом исследований) даёт в 3 раза большу эффективность, чем просмотр
+                        видеокурсов
+                    </p>
                 </div>
                 <div class="format-item">
                     <h4>Будкэмп</h4>
-                    <p>Интенсивное решение реальных задач по 4 часа в день</p>
+                    <p>Интенсивное решение реальных задач по 4 часа в день в комманде других учеников. Всё это время
+                        тебе будет помогать ментор. После этих 40ч программирования ты будешь уже не просто выпускником
+                        курсов</p>
                 </div>
                 <div class="format-item">
                     <h4>Стажировка</h4>
-                    <p>Работа над настоящими IT-проектами в реальных компаниях</p>
+                    <p>Работа над настоящими IT-проектами в реальных компаниях. Созвоны, Код ревью и всё прочее - Ты
+                        будешь знать все процессы и иметь реальный опыт. Наши выпускники без проблем проходят
+                        собеседования на middle и даже middle + позиции. Максимальный оффер выпускника - 300к</p>
                 </div>
             </div>
 
             <h3>Результат:</h3>
-            <p>После окончания курса вы будете способны работать backend-разработчиком с зарплатой от 200 000 рублей. У вас будет реальный портфолио с проектами и опыт работы в IT-компании.</p>
+            <p>После окончания курса вы будете способны работать backend-разработчиком с зарплатой от 140 000 рублей. У
+                вас будет реальный портфолио с проектами и опыт работы в IT-компании.</p>
         </section>
 
         <section class="cta-section">
@@ -77,12 +96,12 @@
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="telegram">Telegram username:</label>
                     <input type="text" id="telegram" name="telegram" placeholder="@username" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="level">Ваш уровень:</label>
                     <select id="level" name="level">
@@ -92,12 +111,13 @@
                         <option value="advanced">Опытный разработчик</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="goal">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком"></textarea>
+                    <textarea id="goal" name="goal" rows="3"
+                        placeholder="Например: найти работу backend-разработчиком"></textarea>
                 </div>
-                
+
                 <button type="submit">Отправить заявку</button>
             </form>
         </div>
@@ -109,7 +129,7 @@
                 <h4>HardCode</h4>
                 <p>Онлайн школа хардкорной бэкэнд разработки</p>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Навигация</h4>
                 <ul>
@@ -118,7 +138,7 @@
                     <li><a href="about.html">О нас</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Информация</h4>
                 <ul>
@@ -129,12 +149,13 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>&copy; 2024 HardCode. Все права защищены.</p>
+            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
