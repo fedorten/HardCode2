@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /courses.html
+Allow: /prices.html
+Allow: /faq.html
+Allow: /contact.html
+Allow: /offer.html
+Allow: /privacy.html
+
+# Block system files
+Disallow: /.env
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /*.md$
+
+# Sitemap location
+Sitemap: https://hardcode.dev/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
