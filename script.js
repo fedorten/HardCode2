@@ -3,7 +3,6 @@
 // Глобальные переменные
 let selectedPackage = '';
 
-// Функции для работы с модальным окном
 function openModal() {
     const modal = document.getElementById('modal');
     if (modal) {
@@ -12,20 +11,29 @@ function openModal() {
         document.body.style.overflow = 'hidden';
     }
 }
-
 function closeModal() {
     const modal = document.getElementById('modal');
     if (modal) {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
         document.body.style.overflow = 'auto';
-        // Сброс формы
         const form = document.getElementById('registration-form');
-        if (form) {
-            form.reset();
-        }
+        if (form) form.reset();
     }
 }
+// Закрытие по клику вне модального
+document.addEventListener('click', function (e) {
+    const modal = document.getElementById('modal');
+    if (modal && e.target === modal) {
+        closeModal();
+    }
+});
+// Закрытие по ESC
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 
 // Функция выбора пакета
 function selectPackage(packageName) {
@@ -48,12 +56,13 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// Отправка формы через серверный endpoint
+// Отправка формы в Telegram
 async function sendToTelegram(formData) {
-    // Используем серверный endpoint для безопасности
-    const API_ENDPOINT = '/api/submit-form'; // Serverless function или backend endpoint
+    // Восстанавливаем рабочую версию
+    const BOT_TOKEN = '8078109443:AAHtuHwDwLab_DB4D68G14porbVoMRR6YtE';
+    const CHAT_ID = '783223961';
 
-    const message = `� Новая заявка на курс HardCode!\n\n` +
+    const message = `🎉 Новая заявка на курс HardCode!\n\n` +
         `👤 Имя: ${formData.name}\n` +
         `📱 Telegram: @${formData.telegram}\n` +
         `📊 Уровень: ${formData.level}\n` +
@@ -61,26 +70,31 @@ async function sendToTelegram(formData) {
         `📦 Пакет: ${formData.package || 'Не указан'}\n` +
         `📅 Дата: ${new Date().toLocaleString('ru-RU')}`;
 
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
     try {
-        const response = await fetch(API_ENDPOINT, {
+        const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            })
         });
 
         if (!response.ok) {
-            throw new Error('Ошибка отправки формы');
+            throw new Error('Ошибка отправки в Telegram');
         }
 
         return true;
     } catch (error) {
-        console.error('Ошибка при отправке формы:', error);
-        // Fallback для демонстрации
-        console.log('Данные формы:', formData);
-        return true; // Временно возвращаем true для демонстрации
+        console.error('Ошибка при отправке в Telegram:', error);
+        return false;
     }
+
 }
 
 // Обработка формы регистрации
@@ -237,10 +251,10 @@ function updateTeacherCarousel() {
         document.getElementById('teacherIndicator0'),
         document.getElementById('teacherIndicator1')
     ];
-    
+
     if (carousel) {
         carousel.style.transform = `translateX(-${currentTeacher * 100}%)`;
-        
+
         indicators.forEach((indicator, index) => {
             if (indicator) {
                 if (index === currentTeacher) {
@@ -273,10 +287,10 @@ function updateStudentCarousel() {
         document.getElementById('studentIndicator1'),
         document.getElementById('studentIndicator2')
     ];
-    
+
     if (carousel) {
         carousel.style.transform = `translateX(-${currentStudent * 100}%)`;
-        
+
         indicators.forEach((indicator, index) => {
             if (indicator) {
                 if (index === currentStudent) {
@@ -307,17 +321,17 @@ function initCarousels() {
     if (document.getElementById('teachersCarousel')) {
         setInterval(nextTeacher, 5000);
     }
-    
+
     if (document.getElementById('studentsCarousel')) {
         setInterval(nextStudent, 4000);
     }
 }
 
 // Автоматическое переключение каруселей (инициализация после загрузки DOM)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initCarousels();
-    
+
     // Инициализация индикаторов при загрузке
     updateTeacherCarousel();
     updateStudentCarousel();
@@ -325,22 +339,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ========== ВИДЕО КОНТРОЛЫ ==========
 // Управление видео оверлеем
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('schoolVideo');
     const overlay = document.getElementById('videoOverlay');
-    
+
     if (video && overlay) {
-        video.addEventListener('play', function() {
+        video.addEventListener('play', function () {
             overlay.style.opacity = '0';
             overlay.style.pointerEvents = 'none';
         });
-        
-        video.addEventListener('pause', function() {
+
+        video.addEventListener('pause', function () {
             overlay.style.opacity = '1';
             overlay.style.pointerEvents = 'auto';
         });
-        
-        video.addEventListener('ended', function() {
+
+        video.addEventListener('ended', function () {
             overlay.style.opacity = '1';
             overlay.style.pointerEvents = 'auto';
         });
@@ -351,10 +365,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    
+
     if (mobileMenu && mobileMenuBtn) {
         mobileMenu.classList.toggle('hidden');
-        
+
         // Меняем иконку
         const icon = mobileMenuBtn.querySelector('i');
         if (mobileMenu.classList.contains('hidden')) {
@@ -372,10 +386,10 @@ function initMobileMenu() {
     const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    
+
     if (mobileMenuLinks.length > 0) {
         mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 // Закрываем меню
                 if (mobileMenu) {
                     mobileMenu.classList.add('hidden');
@@ -390,7 +404,7 @@ function initMobileMenu() {
             });
         });
     }
-    
+
     // Добавляем обработчик для кнопки мобильного меню
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
@@ -398,7 +412,7 @@ function initMobileMenu() {
 }
 
 // Закрытие мобильного меню при клике на ссылку
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
 });
 
@@ -408,21 +422,21 @@ function toggleFAQ(button) {
     const content = faqItem.querySelector('.faq-content');
     const icon = button.querySelector('.faq-icon i');
     const isOpen = !content.classList.contains('hidden');
-    
+
     // Закрываем все остальные FAQ элементы
     const allItems = document.querySelectorAll('.faq-item');
     allItems.forEach(item => {
         const otherContent = item.querySelector('.faq-content');
         const otherIcon = item.querySelector('.faq-icon i');
         const otherButton = item.querySelector('.faq-trigger');
-        
+
         if (otherContent && otherContent !== content) {
             otherContent.classList.add('hidden');
             otherIcon.style.transform = 'rotate(0deg)';
             item.classList.remove('border-primary-green/30', 'bg-primary-green/5');
         }
     });
-    
+
     // Открываем/закрываем текущий элемент
     if (!isOpen) {
         content.classList.remove('hidden');
@@ -435,7 +449,7 @@ function toggleFAQ(button) {
         faqItem.classList.remove('border-primary-green/30', 'bg-primary-green/5');
         button.classList.remove('text-primary-green');
     }
-    
+
     // Плавная анимация при открытии
     if (!isOpen) {
         content.style.maxHeight = '0px';
