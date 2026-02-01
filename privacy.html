@@ -5,27 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Политика конфиденциальности - HardCode</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <!-- Мобильное меню кнопка -->
+            <button id="mobileMenuBtn" class="md:hidden text-primary-green text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Десктопное меню -->
+            <ul class="nav-links hidden md:flex space-x-6 md:space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
+        <!-- Мобильное меню -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-full left-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Главная</a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Цены</a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Курс</a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">О нас</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main>
-
-        <section class="legal-content">
+    <main class="pt-20">
+        <section class="legal-content max-w-4xl mx-auto px-6 py-12">
             <div class="document-info">
                 <p><strong>Дата последнего обновления:</strong> 01.01.2024</p>
             </div>
@@ -111,35 +145,53 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Главная</a></li>
+                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
+                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 

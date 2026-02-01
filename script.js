@@ -307,8 +307,8 @@ function previousStudent() {
     updateStudentCarousel();
 }
 
-// Автоматическое переключение каруселей (инициализация после загрузки DOM)
-document.addEventListener('DOMContentLoaded', function() {
+// Инициализация каруселей
+function initCarousels() {
     // Запускаем автоматическое переключение только если карусели существуют
     if (document.getElementById('teachersCarousel')) {
         setInterval(nextTeacher, 5000);
@@ -317,6 +317,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('studentsCarousel')) {
         setInterval(nextStudent, 4000);
     }
+}
+
+// Автоматическое переключение каруселей (инициализация после загрузки DOM)
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
+    initCarousels();
+    
+    // Инициализация индикаторов при загрузке
+    updateTeacherCarousel();
+    updateStudentCarousel();
 });
 
 // ========== ВИДЕО КОНТРОЛЫ ==========
@@ -341,6 +351,61 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.pointerEvents = 'auto';
         });
     }
+});
+
+// ========== МОБИЛЬНОЕ МЕНЮ ==========
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    
+    if (mobileMenu && mobileMenuBtn) {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Меняем иконку
+        const icon = mobileMenuBtn.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
+    }
+}
+
+// Инициализация мобильного меню
+function initMobileMenu() {
+    const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    
+    if (mobileMenuLinks.length > 0) {
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Закрываем меню
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+                if (mobileMenuBtn) {
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+    }
+    
+    // Добавляем обработчик для кнопки мобильного меню
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+}
+
+// Закрытие мобильного меню при клике на ссылку
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileMenu();
 });
 
 // ========== FAQ АККОРДЕОН ==========

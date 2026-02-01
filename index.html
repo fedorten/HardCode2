@@ -67,25 +67,46 @@
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
                 <h1
-                    class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">
+                    class="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">
                     HardCode</h1>
             </div>
-            <ul class="nav-links flex space-x-8">
+            <!-- Мобильное меню кнопка -->
+            <button id="mobileMenuBtn" class="md:hidden text-primary-green text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Десктопное меню -->
+            <ul class="nav-links hidden md:flex space-x-6 md:space-x-8">
                 <li><a href="prices.html"
-                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Цены<span
                             class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
                 </li>
                 <li><a href="courses.html"
-                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Курс<span
                             class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
                 </li>
                 <li><a href="about.html"
-                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">О
                         нас<span
                             class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
                 </li>
             </ul>
         </nav>
+        <!-- Мобильное меню -->
+        <div id="mobileMenu"
+            class="hidden md:hidden fixed top-full left-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a href="prices.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Цены</a>
+                </li>
+                <li><a href="courses.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Курс</a>
+                </li>
+                <li><a href="about.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">О
+                        нас</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <main class="pt-20">
@@ -425,8 +446,8 @@
                                 <div class="carousel-item min-w-full px-4">
                                     <div
                                         class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
-                                        <div class="flex gap-6">
-                                            <div class="flex-shrink-0 relative">
+                                        <div class="flex flex-col md:flex-row gap-6">
+                                            <div class="flex-shrink-0 relative mx-auto md:mx-0">
                                                 <img src="https://picsum.photos/seed/teacher1/200/200.jpg"
                                                     alt="Максим Волкова"
                                                     class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
@@ -434,7 +455,7 @@
                                                     class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
                                                     Педагог</div>
                                             </div>
-                                            <div class="flex-1">
+                                            <div class="flex-1 text-center md:text-left">
                                                 <h3 class="text-xl font-bold text-primary-green mb-1">Максим Волкова
                                                 </h3>
                                                 <p class="text-text-secondary font-semibold mb-3">Senior Python
@@ -460,8 +481,8 @@
                                 <div class="carousel-item min-w-full px-4">
                                     <div
                                         class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
-                                        <div class="flex gap-6">
-                                            <div class="flex-shrink-0 relative">
+                                        <div class="flex flex-col md:flex-row gap-6">
+                                            <div class="flex-shrink-0 relative mx-auto md:mx-0">
                                                 <img src="https://picsum.photos/seed/teacher2/200/200.jpg"
                                                     alt="Михаил Королев"
                                                     class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
@@ -469,7 +490,7 @@
                                                     class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
                                                     Методист</div>
                                             </div>
-                                            <div class="flex-1">
+                                            <div class="flex-1 text-center md:text-left">
                                                 <h3 class="text-xl font-bold text-primary-green mb-1">Михаил Королев
                                                 </h3>
                                                 <p class="text-text-secondary font-semibold mb-3">Backend Architect @ VK
@@ -523,15 +544,15 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <div
                             class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 relative">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex-shrink-0 relative mx-auto md:mx-0">
                                     <img src="https://picsum.photos/seed/mentor1/200/200.jpg" alt="Алексей Тихонов"
                                         class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
                                     <div
                                         class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
                                         Эксперт</div>
                                 </div>
-                                <div class="flex-1">
+                                <div class="flex-1 text-center md:text-left">
                                     <h3 class="text-xl font-bold text-neon-green mb-1">Алексей Тихонов</h3>
                                     <p class="text-text-secondary font-semibold mb-3">Principal Engineer @ Яндекс</p>
                                     <p class="text-white mb-4"> <strong class="text-primary-green">Сильные
@@ -549,15 +570,15 @@
 
                         <div
                             class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 relative">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex-shrink-0 relative mx-auto md:mx-0">
                                     <img src="https://picsum.photos/seed/mentor2/200/200.jpg" alt="Роман Соколов"
                                         class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
                                     <div
                                         class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
                                         DevOps</div>
                                 </div>
-                                <div class="flex-1">
+                                <div class="flex-1 text-center md:text-left">
                                     <h3 class="text-xl font-bold text-neon-green mb-1">Роман Соколов</h3>
                                     <p class="text-text-secondary font-semibold mb-3">DevOps Lead @ Ozon</p>
                                     <p class="text-white mb-4"> <strong class="text-primary-green">Сильные
@@ -591,28 +612,31 @@
                             id="studentsCarousel">
                             <div class="carousel-item min-w-full px-4">
                                 <div
-                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
-                                    <div class="flex gap-6">
-                                        <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student1/200/200.jpg"
-                                                alt="Александр Петров"
-                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <!-- Фото с затемнением -->
+                                    <div class="relative h-48 md:h-32">
+                                        <img src="https://picsum.photos/seed/student1/400/200.jpg"
+                                            alt="Александр Петров" class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/50 to-transparent">
                                         </div>
-                                        <div class="flex-1">
-                                            <h3 class="text-xl font-bold text-primary-green mb-1">Александр Петров</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Middle Python Developer @
-                                                Яндекс</p>
-                                            <p class="text-white mb-4 italic">"Пришел в HardCode с нуля. За 4 месяца
-                                                прошел от основ до реальных проектов. Сейчас работаю над
-                                                высоконагруженными системами с зарплатой 220к."</p>
-                                            <div class="flex flex-wrap gap-3">
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
-                                                    220к/мес</span>
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
-                                                    4 месяца</span>
-                                            </div>
+                                        <div class="absolute bottom-4 left-4 right-4">
+                                            <h3 class="text-xl font-bold text-white mb-1">Александр Петров</h3>
+                                            <p class="text-text-secondary text-sm">Middle Python Developer @ Яндекс</p>
+                                        </div>
+                                    </div>
+                                    <!-- Контент -->
+                                    <div class="p-6">
+                                        <p class="text-white mb-4 italic text-sm">"Пришел в HardCode с нуля. За 4 месяца
+                                            прошел от основ до реальных проектов. Сейчас работаю над
+                                            высоконагруженными системами с зарплатой 140к."</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">
+                                                140к/мес</span>
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">
+                                                4 месяца</span>
                                         </div>
                                     </div>
                                 </div>
@@ -620,28 +644,31 @@
 
                             <div class="carousel-item min-w-full px-4">
                                 <div
-                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
-                                    <div class="flex gap-6">
-                                        <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student2/200/200.jpg"
-                                                alt="Мария Иванова"
-                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <!-- Фото с затемнением -->
+                                    <div class="relative h-48 md:h-32">
+                                        <img src="https://picsum.photos/seed/student2/400/200.jpg" alt="Мария Иванова"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/50 to-transparent">
                                         </div>
-                                        <div class="flex-1">
-                                            <h3 class="text-xl font-bold text-primary-green mb-1">Мария Иванова</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Backend Developer
-                                                @woman.ru</p>
-                                            <p class="text-white mb-4 italic">"Была маркетологом, решила сменить
-                                                профессию. Интенсивный будкэмп помог мне быстро набраться опыта.
-                                                Устроилась через месяц после окончания стажировки"</p>
-                                            <div class="flex flex-wrap gap-3">
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
-                                                    200к/мес</span>
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">4.5
-                                                    месяца</span>
-                                            </div>
+                                        <div class="absolute bottom-4 left-4 right-4">
+                                            <h3 class="text-xl font-bold text-white mb-1">Мария Иванова</h3>
+                                            <p class="text-text-secondary text-sm">Backend Developer @ woman.ru</p>
+                                        </div>
+                                    </div>
+                                    <!-- Контент -->
+                                    <div class="p-6">
+                                        <p class="text-white mb-4 italic text-sm">"Была маркетологом, решила сменить
+                                            профессию. Интенсивный будкэмп помог мне быстро набраться опыта.
+                                            Устроилась через месяц после окончания стажировки"</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">
+                                                140к/мес</span>
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">4.5
+                                                месяца</span>
                                         </div>
                                     </div>
                                 </div>
@@ -649,27 +676,31 @@
 
                             <div class="carousel-item min-w-full px-4">
                                 <div
-                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
-                                    <div class="flex gap-6">
-                                        <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student3/200/200.jpg"
-                                                alt="Дмитрий Сидоров"
-                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <!-- Фото с затемнением -->
+                                    <div class="relative h-48 md:h-32">
+                                        <img src="https://picsum.photos/seed/student3/400/200.jpg" alt="Дмитрий Сидоров"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/50 to-transparent">
                                         </div>
-                                        <div class="flex-1">
-                                            <h3 class="text-xl font-bold text-primary-green mb-1">Дмитрий Сидоров</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Junior Python Developer
-                                                @Адмиралтейские верфи</p>
-                                            <p class="text-white mb-4 italic">"Понравились индивидуальные занятия за
-                                                прайс намного ниже рынка"</p>
-                                            <div class="flex flex-wrap gap-3">
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
-                                                    180к/мес</span>
-                                                <span
-                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">4
-                                                    месяца</span>
-                                            </div>
+                                        <div class="absolute bottom-4 left-4 right-4">
+                                            <h3 class="text-xl font-bold text-white mb-1">Дмитрий Сидоров</h3>
+                                            <p class="text-text-secondary text-sm">Junior Python Developer @
+                                                Адмиралтейские верфи</p>
+                                        </div>
+                                    </div>
+                                    <!-- Контент -->
+                                    <div class="p-6">
+                                        <p class="text-white mb-4 italic text-sm">"Понравились индивидуальные занятия за
+                                            прайс намного ниже рынка"</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">
+                                                140к/мес</span>
+                                            <span
+                                                class="bg-primary-green/10 border border-primary-green/30 rounded-full px-3 py-1 text-xs font-semibold text-primary-green">4
+                                                месяца</span>
                                         </div>
                                     </div>
                                 </div>

@@ -50,15 +50,29 @@
     <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
+                <h1 class="text-2xl md:text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links flex space-x-8">
-                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
-                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
-                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
-                <li><a href="about.html" class="text-primary-green font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-dark-green"></span></a></li>
+            <!-- Мобильное меню кнопка -->
+            <button id="mobileMenuBtn" class="md:hidden text-primary-green text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Десктопное меню -->
+            <ul class="nav-links hidden md:flex space-x-6 md:space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group text-sm md:text-base">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-primary-green font-medium relative group text-sm md:text-base">О нас<span class="absolute bottom-[-5px] left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-dark-green"></span></a></li>
             </ul>
         </nav>
+        <!-- Мобильное меню -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-full left-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Главная</a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Цены</a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium block py-2">Курс</a></li>
+                <li><a href="about.html" class="text-primary-green font-medium block py-2">О нас</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="pt-20">
@@ -143,7 +157,7 @@
                             <i class="fas fa-trophy text-bg-dark text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-primary-green mb-4">Гарантия результата</h3>
-                        <p class="text-text-secondary">Наши выпускники находят работу с зарплатой от 200 000 рублей</p>
+                        <p class="text-text-secondary">Наши выпускники находят работу с зарплатой от 140 000 рублей</p>
                     </div>
                 </div>
             </div>
@@ -195,7 +209,7 @@
                     <div class="prose prose-lg max-w-none">
                         <p class="text-xl text-text-secondary leading-relaxed mb-6">
                             Наши выпускники успешно трудоустраиваются в ведущие IT-компании и начинают свою карьеру с 
-                            <span class="text-primary-green font-bold text-2xl">зарплаты от 200 000 рублей</span>.
+                            <span class="text-primary-green font-bold text-2xl">зарплаты от 140 000 рублей</span>.
                         </p>
                         <p class="text-xl text-text-secondary leading-relaxed">
                             <span class="bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent font-black">Реальный опыт</span> 
