@@ -5,159 +5,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HardCode - Онлайн школа хардкорной бэкэнд разработки</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <ul class="nav-links flex space-x-8">
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>HardCode - Онлайн школа для взрослых</h1>
-                <p>Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 140к</p>
-                <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+    <main class="pt-20">
+        <section class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+            <!-- Анимированный фон -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+            </div>
+            
+            <div class="hero-content text-center relative z-10 max-w-5xl px-6">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent leading-tight">
+                    HardCode - Онлайн школа для взрослых
+                </h1>
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 140к
+                </p>
+                
+                <!-- Блок преимуществ -->
+                <div class="flex flex-wrap justify-center gap-6 mb-8">
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-bg-dark font-bold"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-2xl font-bold text-primary-green">1200+</div>
+                            <div class="text-sm text-text-secondary">Учеников</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-graduate text-bg-dark font-bold"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-2xl font-bold text-primary-green">1 на 1</div>
+                            <div class="text-sm text-text-secondary">Обучение</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-bg-dark font-bold"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-2xl font-bold text-primary-green">98%</div>
+                            <div class="text-sm text-text-secondary">Хороших отзывов</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="openModal()" class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
+                    <span class="relative z-10">Записаться на курс</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                </button>
             </div>
         </section>
 
-        <section class="course-info">
-            <h2>Хардкорная бэкэнд разработка</h2>
-            <p>Интенсивный курс для тех, кто хочет стать профессиональным backend-разработчиком. За 3-4 месяца вы
-                получите реальный опыт и сможете работать middle разработчиком с зарплатой от 140к.</p>
+        <section class="max-w-7xl mx-auto px-6 py-20">
+            <div class="bg-bg-light rounded-3xl p-8 md:p-12 border border-primary-green/10">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                    Хардкорная бэкэнд разработка
+                </h2>
+                <p class="text-xl text-text-secondary text-center mb-12 max-w-4xl mx-auto">
+                    Интенсивный курс для тех, кто хочет стать профессиональным backend-разработчиком. За 3-4 месяца вы
+                    получите реальный опыт и сможете работать middle разработчиком с зарплатой от 140к.
+                </p>
 
-            <div class="technologies">
-                <h3>Технологии, которые вы освоите:</h3>
-                <div class="tech-grid">
-                    <div class="tech-item">Python 3.11+</div>
-                    <div class="tech-item">Django / Django REST Framework</div>
-                    <div class="tech-item">FastAPI</div>
-                    <div class="tech-item">PostgreSQL</div>
-                    <div class="tech-item">MongoDB</div>
-                    <div class="tech-item">Redis</div>
-                    <div class="tech-item">Docker</div>
-                    <div class="tech-item">Kubernetes</div>
-                    <div class="tech-item">Git / GitHub</div>
-                    <div class="tech-item">Linux / Bash</div>
-                    <div class="tech-item">Nginx</div>
-                    <div class="tech-item">CI/CD (GitHub Actions)</div>
-                    <div class="tech-item">AI инструменты</div>
-                    <div class="tech-item">GraphQL</div>
-                    <div class="tech-item">gRPC</div>
-                    <div class="tech-item">Celery</div>
-                    <div class="tech-item">WebSocket</div>
-                    <div class="tech-item">SQLAlchemy</div>
-                    <div class="tech-item">Pytest</div>
-                    <div class="tech-item">Микросервисы</div>
-                </div>
-            </div>
-
-            <div class="learning-path">
-                <h3>Ваш путь в IT:</h3>
-                <div class="path-step">
-                    <strong>1 месяц:</strong> Освоение основ (если у вас сейчас нулевой уровень)
-                </div>
-                <div class="path-step">
-                    <strong>2 недели:</strong> Будкэмп - решение реальных боевых задач по 4 часа в день в команде и под
-                    руководством ментора
-                </div>
-                <div class="path-step">
-                    <strong>2 месяца:</strong> Стажировка в реальной IT-компании с разработкой настоящих продуктов
-                </div>
-            </div>
-        </section>
-
-        <section class="teachers">
-            <h2>Наши преподаватели</h2>
-            <p>Профессионалы с реальным опытом и выдающимися преподавательскими навыками</p>
-
-            <!-- Индивидуальные преподаватели -->
-            <div class="teachers-section">
-                <h3>📚 Индивидуальные преподаватели</h3>
-                <p class="teachers-subtitle">Мастера педагогики с опытом обучения более 100+ студентов</p>
-
-                <div class="teachers-grid">
-                    <div class="teacher-card individual">
-                        <div class="teacher-photo">
-                            <img src="https://picsum.photos/seed/teacher1/200/200.jpg" alt="Елена Волкова">
-                            <div class="teacher-badge individual-badge">Педагог</div>
-                        </div>
-                        <div class="teacher-info">
-                            <h3>Максим Волкова</h3>
-                            <p class="teacher-position">Senior Python Developer @ СберТех</p>
-                            <p class="teacher-expertise">🎯 <strong>Сильные стороны:</strong> Объяснение сложных
-                                концепций, создание индивидуальных программ обучения</p>
-                            <div class="teacher-achievements">
-                                <div class="achievement-item">👥 Обучил 200+ студентов</div>
-                                <div class="achievement-item">📖 Автор 5 учебных программ по Python</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="teacher-card individual">
-                        <div class="teacher-photo">
-                            <img src="https://picsum.photos/seed/teacher2/200/200.jpg" alt="Михаил Королев">
-                            <div class="teacher-badge individual-badge">Методист</div>
-                        </div>
-                        <div class="teacher-info">
-                            <h3>Михаил Королев</h3>
-                            <p class="teacher-position">Backend Architect @ VK</p>
-                            <p class="teacher-expertise">🎯 <strong>Сильные стороны:</strong> Структурирование
-                                материала, пошаговое обучение, адаптация под уровень студента</p>
-                            <div class="teacher-achievements">
-                                <div class="achievement-item">🎓 10 лет преподавательского опыта</div>
-                                <div class="achievement-item">🔥 95% студентов находят работу после обучения</div>
-                            </div>
-                        </div>
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-primary-green mb-8 text-center">Технологии, которые вы освоите:</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Python 3.11+</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Django / DRF</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">FastAPI</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">PostgreSQL</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">MongoDB</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Redis</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Docker</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Kubernetes</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Git / GitHub</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Linux / Bash</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Nginx</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">CI/CD</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">AI инструменты</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">GraphQL</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">gRPC</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Celery</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">WebSocket</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">SQLAlchemy</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Pytest</div>
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Микросервисы</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Менторы -->
-            <div class="teachers-section">
-                <h3>🚀 Менторы и эксперты</h3>
-                <p class="teachers-subtitle">Профессионалы с опытом реальных проектов в ведущих компаниях</p>
-
-                <div class="teachers-grid">
-                    <div class="teacher-card mentor">
-                        <div class="teacher-photo">
-                            <img src="https://picsum.photos/seed/mentor1/200/200.jpg" alt="Алексей Тихонов">
-                            <div class="teacher-badge mentor-badge">Эксперт</div>
-                        </div>
-                        <div class="teacher-info">
-                            <h3>Алексей Тихонов</h3>
-                            <p class="teacher-position">Principal Engineer @ Яндекс</p>
-                            <p class="teacher-expertise">🎯 <strong>Сильные стороны:</strong> Высоконагруженные системы,
-                                архитектура микросервисов, code review</p>
-                            <div class="teacher-achievements">
-                                <div class="achievement-item">⚡ Разработал системы для 10М+ пользователей</div>
-                                <div class="achievement-item">💼 15 лет в enterprise backend</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-primary-green mb-8 text-center">Ваш путь в IT:</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">1</div>
+                                <div>
+                                    <div class="font-bold text-primary-green mb-1">1 месяц</div>
+                                    <div class="text-text-secondary">Освоение основ (если у вас сейчас нулевой уровень)</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="teacher-card mentor">
-                        <div class="teacher-photo">
-                            <img src="https://picsum.photos/seed/mentor2/200/200.jpg" alt="Ирина Соколова">
-                            <div class="teacher-badge mentor-badge">DevOps</div>
+                        
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">2</div>
+                                <div>
+                                    <div class="font-bold text-primary-green mb-1">2 недели</div>
+                                    <div class="text-text-secondary">Будкэмп - решение реальных боевых задач по 4 часа в день в команде и под руководством ментора</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="teacher-info">
-                            <h3>Роман Соколов</h3>
-                            <p class="teacher-position">DevOps Lead @ Ozon</p>
-                            <p class="teacher-expertise">🎯 <strong>Сильные стороны:</strong> CI/CD, Kubernetes,
-                                продакшн-эксплуатация</p>
-                            <div class="teacher-achievements">
-                                <div class="achievement-item">Эксперт в области Деплоя ваших проектов</div>
+                        
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">3</div>
+                                <div>
+                                    <div class="font-bold text-primary-green mb-1">2 месяца</div>
+                                    <div class="text-text-secondary">Стажировка в реальной IT-компании с разработкой настоящих продуктов</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,118 +172,330 @@
             </div>
         </section>
 
-        <section class="students">
-            <h2>Наши ученики</h2>
-            <p>Истории успеха тех, кто уже прошел наш курс и стал профессиональным разработчиком</p>
+        <section class="bg-bg-darker py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                    Наши преподаватели
+                </h2>
+                <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
+                    Профессионалы с реальным опытом и выдающимися преподавательскими навыками
+                </p>
 
-            <div class="students-grid">
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="https://picsum.photos/seed/student1/200/200.jpg" alt="Александр Петров">
-                    </div>
-                    <div class="student-info">
-                        <h3>Александр Петров</h3>
-                        <p class="student-position">Middle Python Developer @ Яндекс</p>
-                        <p class="student-story">"Пришел в HardCode с нуля. За 4 месяца прошел от основ до реальных
-                            проектов. Сейчас работаю над высоконагруженными системами с зарплатой 220к."</p>
-                        <div class="student-result">
-                            <span class="result-item">💰 220к/мес</span>
-                            <span class="result-item">⏱️ 4 месяца</span>
+                <!-- Индивидуальные преподаватели -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-primary-green mb-3 text-center">📚 Индивидуальные преподаватели</h3>
+                    <p class="text-text-secondary text-center mb-8">Мастера педагогики с опытом обучения более 100+ студентов</p>
+
+                    <!-- Карусель преподавателей -->
+                    <div class="relative">
+                        <div class="carousel-container overflow-hidden rounded-2xl">
+                            <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="teachersCarousel">
+                                <div class="carousel-item min-w-full px-4">
+                                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
+                                        <div class="flex gap-6">
+                                            <div class="flex-shrink-0 relative">
+                                                <img src="https://picsum.photos/seed/teacher1/200/200.jpg" alt="Максим Волкова" class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
+                                                <div class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Педагог</div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="text-xl font-bold text-primary-green mb-1">Максим Волкова</h3>
+                                                <p class="text-text-secondary font-semibold mb-3">Senior Python Developer @ СберТех</p>
+                                                <p class="text-white mb-4">🎯 <strong class="text-neon-green">Сильные стороны:</strong> Объяснение сложных концепций, создание индивидуальных программ обучения</p>
+                                                <div class="space-y-2">
+                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        👥 Обучил 200+ студентов
+                                                    </div>
+                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        📖 Автор 5 учебных программ по Python
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item min-w-full px-4">
+                                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
+                                        <div class="flex gap-6">
+                                            <div class="flex-shrink-0 relative">
+                                                <img src="https://picsum.photos/seed/teacher2/200/200.jpg" alt="Михаил Королев" class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
+                                                <div class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Методист</div>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h3 class="text-xl font-bold text-primary-green mb-1">Михаил Королев</h3>
+                                                <p class="text-text-secondary font-semibold mb-3">Backend Architect @ VK</p>
+                                                <p class="text-white mb-4">🎯 <strong class="text-neon-green">Сильные стороны:</strong> Структурирование материала, пошаговое обучение, адаптация под уровень студента</p>
+                                                <div class="space-y-2">
+                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        🎓 10 лет преподавательского опыта
+                                                    </div>
+                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        🔥 95% студентов находят работу после обучения
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Кнопки навигации -->
+                        <button onclick="previousTeacher()" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="nextTeacher()" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Индикаторы -->
+                        <div class="flex justify-center gap-2 mt-6">
+                            <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300" id="teacherIndicator0"></span>
+                            <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="teacherIndicator1"></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="https://picsum.photos/seed/student2/200/200.jpg" alt="Мария Иванова">
-                    </div>
-                    <div class="student-info">
-                        <h3>Мария Иванова</h3>
-                        <p class="student-position">Backend Developer @woman.ru</p>
-                        <p class="student-story">"Была маркетологом, решила сменить профессию. Интенсивный будкэмп помог
-                            мне быстро набраться опыта. Устроилась через месяц после окончания стажировки"</p>
-                        <div class="student-result">
-                            <span class="result-item">💰 200к/мес</span>
-                            <span class="result-item">⏱️ 4.5 месяца</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- Менторы -->
+                <div>
+                    <h3 class="text-2xl font-bold text-neon-green mb-3 text-center">🚀 Менторы и эксперты</h3>
+                    <p class="text-text-secondary text-center mb-8">Профессионалы с опытом реальных проектов в ведущих компаниях</p>
 
-                <div class="student-card">
-                    <div class="student-photo">
-                        <img src="https://picsum.photos/seed/student3/200/200.jpg" alt="Дмитрий Сидоров">
-                    </div>
-                    <div class="student-info">
-                        <h3>Дмитрий Сидоров</h3>
-                        <p class="student-position">junior Python Developer @Адмиралтейские верфи</p>
-                        <p class="student-story">"Понравились индивидуальные занятия за прайс намного ниже рынка"</p>
-                        <div class="student-result">
-                            <span class="result-item">💰 180к/мес</span>
-                            <span class="result-item">⏱️ 4 месяца</span>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0 relative">
+                                    <img src="https://picsum.photos/seed/mentor1/200/200.jpg" alt="Алексей Тихонов" class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
+                                    <div class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Эксперт</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-neon-green mb-1">Алексей Тихонов</h3>
+                                    <p class="text-text-secondary font-semibold mb-3">Principal Engineer @ Яндекс</p>
+                                    <p class="text-white mb-4">🎯 <strong class="text-primary-green">Сильные стороны:</strong> Высоконагруженные системы, архитектура микросервисов, code review</p>
+                                    <div class="space-y-2">
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">⚡ Разработал системы для 10М+ пользователей</div>
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">💼 15 лет в enterprise backend</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0 relative">
+                                    <img src="https://picsum.photos/seed/mentor2/200/200.jpg" alt="Роман Соколов" class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
+                                    <div class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">DevOps</div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-neon-green mb-1">Роман Соколов</h3>
+                                    <p class="text-text-secondary font-semibold mb-3">DevOps Lead @ Ozon</p>
+                                    <p class="text-white mb-4">🎯 <strong class="text-primary-green">Сильные стороны:</strong> CI/CD, Kubernetes, продакшн-эксплуатация</p>
+                                    <div class="space-y-2">
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">Эксперт в области Деплоя ваших проектов</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="packages">
-            <h2>Выберите свой пакет:</h2>
-            <div class="package-cards">
-                <div class="package-card">
-                    <h3>Базовый</h3>
-                    <div class="price">Цена по запросу</div>
-                    <ul>
-                        <li>Индивидуальные занятия</li>
-                        <li>Основы программирования</li>
-                        <li>Поддержка куратора</li>
-                    </ul>
-                    <button onclick="selectPackage('Базовый')">Выбрать пакет</button>
-                </div>
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                    Наши ученики
+                </h2>
+                <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
+                    Истории успеха тех, кто уже прошел наш курс и стал профессиональным разработчиком
+                </p>
 
-                <div class="package-card">
-                    <h3>Продвинутый</h3>
-                    <div class="price">Цена по запросу</div>
-                    <ul>
-                        <li>Все из базового пакета</li>
-                        <li>Будкэмп с боевыми задачами</li>
-                        <li>Стажировка в IT-компании</li>
-                    </ul>
-                    <button onclick="selectPackage('Продвинутый')">Выбрать пакет</button>
+                <!-- Карусель учеников -->
+                <div class="relative">
+                    <div class="carousel-container overflow-hidden rounded-2xl">
+                        <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="studentsCarousel">
+                            <div class="carousel-item min-w-full px-4">
+                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <div class="flex gap-6">
+                                        <div class="flex-shrink-0">
+                                            <img src="https://picsum.photos/seed/student1/200/200.jpg" alt="Александр Петров" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-primary-green mb-1">Александр Петров</h3>
+                                            <p class="text-text-secondary font-semibold mb-3">Middle Python Developer @ Яндекс</p>
+                                            <p class="text-white mb-4 italic">"Пришел в HardCode с нуля. За 4 месяца прошел от основ до реальных проектов. Сейчас работаю над высоконагруженными системами с зарплатой 220к."</p>
+                                            <div class="flex flex-wrap gap-3">
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 220к/мес</span>
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4 месяца</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item min-w-full px-4">
+                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <div class="flex gap-6">
+                                        <div class="flex-shrink-0">
+                                            <img src="https://picsum.photos/seed/student2/200/200.jpg" alt="Мария Иванова" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-primary-green mb-1">Мария Иванова</h3>
+                                            <p class="text-text-secondary font-semibold mb-3">Backend Developer @woman.ru</p>
+                                            <p class="text-white mb-4 italic">"Была маркетологом, решила сменить профессию. Интенсивный будкэмп помог мне быстро набраться опыта. Устроилась через месяц после окончания стажировки"</p>
+                                            <div class="flex flex-wrap gap-3">
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 200к/мес</span>
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4.5 месяца</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item min-w-full px-4">
+                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                    <div class="flex gap-6">
+                                        <div class="flex-shrink-0">
+                                            <img src="https://picsum.photos/seed/student3/200/200.jpg" alt="Дмитрий Сидоров" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-primary-green mb-1">Дмитрий Сидоров</h3>
+                                            <p class="text-text-secondary font-semibold mb-3">Junior Python Developer @Адмиралтейские верфи</p>
+                                            <p class="text-white mb-4 italic">"Понравились индивидуальные занятия за прайс намного ниже рынка"</p>
+                                            <div class="flex flex-wrap gap-3">
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 180к/мес</span>
+                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4 месяца</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Кнопки навигации -->
+                    <button onclick="previousStudent()" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextStudent()" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Индикаторы -->
+                    <div class="flex justify-center gap-2 mt-6">
+                        <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300" id="studentIndicator0"></span>
+                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="studentIndicator1"></span>
+                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="studentIndicator2"></span>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="package-card">
-                    <h3>VIP</h3>
-                    <div class="price">Цена по запросу</div>
-                    <ul>
-                        <li>Все из продвинутого пакета</li>
-                        <li>Персональное сопровождение</li>
-                        <li>Гарантия трудоустройства</li>
-                    </ul>
-                    <button onclick="selectPackage('VIP')">Выбрать пакет</button>
+        <section class="bg-bg-darker py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                    Выберите свой пакет
+                </h2>
+                <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
+                    Выберите подходящий вам формат обучения
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green"></div>
+                        <h3 class="text-2xl font-bold text-primary-green mb-6">Базовый</h3>
+                        <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Индивидуальные занятия</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Основы программирования</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Поддержка куратора</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('Базовый')" class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
+                            Выбрать пакет
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-primary-green/15 to-dark-green/15 border border-primary-green/40 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/30 relative overflow-hidden group scale-105">
+                        <div class="absolute top-4 right-4 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Популярный</div>
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-green to-primary-green"></div>
+                        <h3 class="text-2xl font-bold text-neon-green mb-6">Продвинутый</h3>
+                        <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-neon-green font-bold"></i>
+                                <span>Все из базового пакета</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-neon-green font-bold"></i>
+                                <span>Будкэмп с боевыми задачами</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-neon-green font-bold"></i>
+                                <span>Стажировка в IT-компании</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('Продвинутый')" class="w-full bg-gradient-to-r from-neon-green to-primary-green text-bg-dark py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300">
+                            Выбрать пакет
+                        </button>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green"></div>
+                        <h3 class="text-2xl font-bold text-primary-green mb-6">VIP</h3>
+                        <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Все из продвинутого пакета</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Персональное сопровождение</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-primary-green font-bold"></i>
+                                <span>Гарантия трудоустройства</span>
+                            </li>
+                        </ul>
+                        <button onclick="selectPackage('VIP')" class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
+                            Выбрать пакет
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Модальное окно формы -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Запишитесь на курс</h2>
-            <form id="registration-form">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
+    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-bg-darker/95 backdrop-blur-lg">
+        <div class="bg-bg-light border border-primary-green/30 rounded-3xl p-8 w-full max-w-md mx-4 relative shadow-2xl shadow-primary-green/20">
+            <button onclick="closeModal()" class="absolute right-6 top-6 text-text-secondary hover:text-primary-green transition-colors duration-300 text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-2xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Запишитесь на курс</h2>
+            <form id="registration-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-primary-green font-semibold">Имя:</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="telegram">Telegram username:</label>
-                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                <div>
+                    <label for="telegram" class="block mb-2 text-primary-green font-semibold">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="level">Ваш уровень:</label>
-                    <select id="level" name="level">
+                <div>
+                    <label for="level" class="block mb-2 text-primary-green font-semibold">Ваш уровень:</label>
+                    <select id="level" name="level" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                         <option value="beginner">Полный новичок</option>
                         <option value="basic">Есть базовые знания</option>
                         <option value="intermediate">Уже писал код</option>
@@ -284,55 +503,143 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="goal">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3"
-                        placeholder="Например: найти работу backend-разработчиком"></textarea>
+                <div>
+                    <label for="goal" class="block mb-2 text-primary-green font-semibold">Ваша цель:</label>
+                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300 resize-none"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="package">Выбранный пакет:</label>
-                    <input type="text" id="package" name="package" readonly>
+                <div>
+                    <label for="package" class="block mb-2 text-primary-green font-semibold">Выбранный пакет:</label>
+                    <input type="text" id="package" name="package" readonly class="w-full px-4 py-3 bg-bg-dark/50 border border-primary-green/20 rounded-xl text-primary-green">
                 </div>
 
-                <button type="submit">Отправить заявку</button>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
+                    Отправить заявку
+                </button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
+                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Карусели
+        let currentTeacher = 0;
+        let currentStudent = 0;
+        
+        function updateTeacherCarousel() {
+            const carousel = document.getElementById('teachersCarousel');
+            const indicators = [
+                document.getElementById('teacherIndicator0'),
+                document.getElementById('teacherIndicator1')
+            ];
+            
+            carousel.style.transform = `translateX(-${currentTeacher * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                if (index === currentTeacher) {
+                    indicator.classList.remove('bg-primary-green/30');
+                    indicator.classList.add('bg-primary-green');
+                } else {
+                    indicator.classList.remove('bg-primary-green');
+                    indicator.classList.add('bg-primary-green/30');
+                }
+            });
+        }
+        
+        function updateStudentCarousel() {
+            const carousel = document.getElementById('studentsCarousel');
+            const indicators = [
+                document.getElementById('studentIndicator0'),
+                document.getElementById('studentIndicator1'),
+                document.getElementById('studentIndicator2')
+            ];
+            
+            carousel.style.transform = `translateX(-${currentStudent * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                if (index === currentStudent) {
+                    indicator.classList.remove('bg-primary-green/30');
+                    indicator.classList.add('bg-primary-green');
+                } else {
+                    indicator.classList.remove('bg-primary-green');
+                    indicator.classList.add('bg-primary-green/30');
+                }
+            });
+        }
+        
+        function nextTeacher() {
+            currentTeacher = (currentTeacher + 1) % 2;
+            updateTeacherCarousel();
+        }
+        
+        function previousTeacher() {
+            currentTeacher = (currentTeacher - 1 + 2) % 2;
+            updateTeacherCarousel();
+        }
+        
+        function nextStudent() {
+            currentStudent = (currentStudent + 1) % 3;
+            updateStudentCarousel();
+        }
+        
+        function previousStudent() {
+            currentStudent = (currentStudent - 1 + 3) % 3;
+            updateStudentCarousel();
+        }
+        
+        // Автоматическое переключение каруселей
+        setInterval(nextTeacher, 5000);
+        setInterval(nextStudent, 4000);
+    </script>
 </body>
 
 </html>

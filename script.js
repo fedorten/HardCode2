@@ -7,7 +7,8 @@ let selectedPackage = '';
 function openModal() {
     const modal = document.getElementById('modal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
     }
 }
@@ -15,7 +16,8 @@ function openModal() {
 function closeModal() {
     const modal = document.getElementById('modal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
         document.body.style.overflow = 'auto';
         // Сброс формы
         const form = document.getElementById('registration-form');
@@ -47,7 +49,7 @@ window.onclick = function (event) {
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closeModal();
-    } [j]
+    }
 });
 
 // Отправка формы в Telegram

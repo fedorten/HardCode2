@@ -12,7 +12,7 @@
     --text-secondary: #b0b0b0;
     --accent: #00ff88;
     --gradient-primary: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
-    --gradient-dark: linear-gradient(180deg, #393939 0%, #050505 100%);
+    --gradient-dark: linear-gradient(180deg, #020202 0%, #050505 100%);
     --gradient-card: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 204, 102, 0.05) 100%);
 }
 
