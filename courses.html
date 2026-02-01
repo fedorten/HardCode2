@@ -5,101 +5,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Курс - HardCode</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 255, 136, 0.6)' }
+                        }
+                    },
+                    backgroundSize: {
+                        '400%': '400% 400%'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <ul class="nav-links flex space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-dark-green"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Хардкорная Backend разработка</h1>
-                <p>Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 140к</p>
-                <button class="cta-button" onclick="openModal()">Записаться на курс</button>
+    <main class="pt-20">
+        <section class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+            <!-- Анимированный фон -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-float"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute top-1/3 right-1/4 w-48 h-48 bg-dark-green/3 rounded-full blur-2xl animate-float" style="animation-delay: 2s"></div>
+                <div class="absolute bottom-1/3 left-1/3 w-64 h-64 bg-primary-green/4 rounded-full blur-2xl animate-pulse-slow" style="animation-delay: 3s"></div>
+            </div>
+            
+            <div class="hero-content text-center relative z-10 max-w-5xl px-6">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent leading-tight animate-gradient bg-[length:400%_400%]">
+                    Хардкорная Backend разработка
+                </h1>
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Научись <span class="text-primary-green font-bold">программировать</span> на настоящих 
+                    <span class="bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent font-black">боевых задачах</span> и найди 
+                    <span class="text-primary-green font-semibold">работу</span> с зарплатой 
+                    <span class="bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent font-black text-2xl">от 140к</span>
+                </p>
+                
+                <button onclick="openModal()" class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
+                    <span class="relative z-10">Записаться на курс</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                </button>
             </div>
         </section>
 
-        <section class="course-details">
-            <h2>О курсе</h2>
-            <p>Наш курс предназначен для взрослых, которые серьезно настроены научиться программировать и найти работу в
-                IT. Мы не учим теории и не даём простых заданий - мы даем реальные навыки через практику на боевых
-                проектах.<br><br>
-                Мы работаем над качеством, а не над колличеством - поэтому у нас ровно один курс, который
-                подобно бриллианту вытачиватся уже больше 4х лет, чтобы дать максимальное качество материала и находть
-                лучшие стажировки для учеников</p>
-
-            <h3>Что вы изучите:</h3>
-            <ul>
-                <li>Основы программирования и алгоритмы</li>
-                <li>Базы данных (SQL, NoSQL)</li>
-                <li>API и веб-сервисы</li>
-                <li>Фреймворки и технологии бэкэнда</li>
-                <li>Версионный контроль (Git)</li>
-                <li>Тестирование и отладка кода</li>
-            </ul>
-
-            <h3>Формат обучения:</h3>
-            <div class="format-grid">
-                <div class="format-item">
-                    <h4>Индивидуальные занятия</h4>
-                    <p>Занятия 1 на 1 с отличными преподавателями программирования два раза в неделю. Индивидуальные
-                        занятия(подтверждено рядом исследований) даёт в 3 раза большу эффективность, чем просмотр
-                        видеокурсов
+<section class="py-20 bg-gradient-to-b from-bg-dark via-bg-light to-bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">О курсе</h2>
+                
+                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 mb-12 backdrop-blur-sm">
+                    <p class="text-lg text-white leading-relaxed mb-6">
+                        Наш курс предназначен для взрослых, которые серьезно настроены научиться программировать и найти работу в IT. Мы не учим теории и не даём простых заданий - мы даем реальные навыки через практику на боевых проектах.
+                    </p>
+                    <p class="text-lg text-white leading-relaxed">
+                        Мы работаем над качеством, а не над колличеством - поэтому у нас ровно один курс, который подобно бриллианту вытачивается уже больше 4х лет, чтобы дать максимальное качество материала и находить лучшие стажировки для учеников
                     </p>
                 </div>
-                <div class="format-item">
-                    <h4>Будкэмп</h4>
-                    <p>Интенсивное решение реальных задач по 4 часа в день в комманде других учеников. Всё это время
-                        тебе будет помогать ментор. После этих 40ч программирования ты будешь уже не просто выпускником
-                        курсов</p>
+
+                <h3 class="text-3xl font-bold text-primary-green mb-8 text-center">Что вы изучите:</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-code text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Основы программирования</h4>
+                        </div>
+                        <p class="text-text-secondary">Алгоритмы, структуры данных, основы ООП</p>
+                    </div>
+                    
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-database text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Базы данных</h4>
+                        </div>
+                        <p class="text-text-secondary">SQL, NoSQL, проектирование схем</p>
+                    </div>
+                    
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-plug text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">API и веб-сервисы</h4>
+                        </div>
+                        <p class="text-text-secondary">REST, GraphQL, микросервисы</p>
+                    </div>
+                    
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-layer-group text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Фреймворки</h4>
+                        </div>
+                        <p class="text-text-secondary">Современные технологии бэкэнда</p>
+                    </div>
+                    
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-code-branch text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Версионный контроль</h4>
+                        </div>
+                        <p class="text-text-secondary">Git, GitHub, командная работа</p>
+                    </div>
+                    
+                    <div class="bg-bg-light border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/10">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center">
+                                <i class="fas fa-bug text-bg-dark font-bold"></i>
+                            </div>
+                            <h4 class="font-semibold text-white">Тестирование</h4>
+                        </div>
+                        <p class="text-text-secondary">Unit тесты, отладка кода</p>
+                    </div>
                 </div>
-                <div class="format-item">
-                    <h4>Стажировка</h4>
-                    <p>Работа над настоящими IT-проектами в реальных компаниях. Созвоны, Код ревью и всё прочее - Ты
-                        будешь знать все процессы и иметь реальный опыт. Наши выпускники без проблем проходят
-                        собеседования на middle и даже middle + позиции. Максимальный оффер выпускника - 300к</p>
+
+                <h3 class="text-3xl font-bold text-primary-green mb-8 text-center">Формат обучения:</h3>
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-tie text-bg-dark text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neon-green">Индивидуальные занятия</h4>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed">
+                            Занятия 1 на 1 с отличными преподавателями программирования два раза в неделю. Индивидуальные занятия (подтверждено рядом исследований) даёт в 3 раза большую эффективность, чем просмотр видеокурсов
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-fire text-bg-dark text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neon-green">Будкэмп</h4>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed">
+                            Интенсивное решение реальных задач по 4 часа в день в команде других учеников. Всё это время тебе будет помогать ментор. После этих 40ч программирования ты будешь уже не просто выпускником курсов
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-briefcase text-bg-dark text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neon-green">Стажировка</h4>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed">
+                            Работа над настоящими IT-проектами в реальных компаниях. Созвоны, Код ревью и всё прочее - Ты будешь знать все процессы и иметь реальный опыт. Наши выпускники без проблем проходят собеседования на middle и даже middle + позиции. Максимальный оффер выпускника - 300к
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold text-primary-green mb-8 text-center">Результат:</h3>
+                <div class="bg-gradient-to-r from-primary-green/20 to-dark-green/20 border border-primary-green/40 rounded-3xl p-8 text-center">
+                    <p class="text-xl text-white leading-relaxed mb-6">
+                        После окончания курса вы будете способны работать backend-разработчиком с зарплатой 
+                        <span class="bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent font-black text-2xl">от 140 000 рублей</span>.
+                    </p>
+                    <p class="text-lg text-text-secondary">
+                        У вас будет реальное портфолио с проектами и опыт работы в IT-компании.
+                    </p>
                 </div>
             </div>
-
-            <h3>Результат:</h3>
-            <p>После окончания курса вы будете способны работать backend-разработчиком с зарплатой от 140 000 рублей. У
-                вас будет реальный портфолио с проектами и опыт работы в IT-компании.</p>
         </section>
 
     </main>
 
     <!-- Модальное окно формы -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Запишитесь на курс</h2>
-            <form id="registration-form">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
+    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-bg-darker/95 backdrop-blur-lg">
+        <div class="bg-bg-light border border-primary-green/30 rounded-3xl p-8 w-full max-w-md mx-4 relative shadow-2xl shadow-primary-green/20">
+            <button onclick="closeModal()" class="absolute right-6 top-6 text-text-secondary hover:text-primary-green transition-colors duration-300 text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-2xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Запишитесь на курс</h2>
+            <form id="registration-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-primary-green font-semibold">Имя:</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="telegram">Telegram username:</label>
-                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                <div>
+                    <label for="telegram" class="block mb-2 text-primary-green font-semibold">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="level">Ваш уровень:</label>
-                    <select id="level" name="level">
+                <div>
+                    <label for="level" class="block mb-2 text-primary-green font-semibold">Ваш уровень:</label>
+                    <select id="level" name="level" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                         <option value="beginner">Полный новичок</option>
                         <option value="basic">Есть базовые знания</option>
                         <option value="intermediate">Уже писал код</option>
@@ -107,46 +263,65 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="goal">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3"
-                        placeholder="Например: найти работу backend-разработчиком"></textarea>
+                <div>
+                    <label for="goal" class="block mb-2 text-primary-green font-semibold">Ваша цель:</label>
+                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300"></textarea>
                 </div>
 
-                <button type="submit">Отправить заявку</button>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
+                    Отправить заявку
+                </button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Главная</a></li>
+                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
+                        <li><a href="courses.html" class="text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 

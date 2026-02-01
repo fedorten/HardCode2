@@ -5,161 +5,296 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цены - HardCode</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        }
+                    },
+                    backgroundSize: {
+                        '400%': '400% 400%'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <ul class="nav-links flex space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-primary-green font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-full h-0.5 bg-gradient-to-r from-primary-green to-dark-green"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Инвистируй в своё будущее</h1>
-                <p>Цена курсов от 11 до 118 тысяч рублей. Станьте программистом, или мы вернем вам деньги</p>
+    <main class="pt-20">
+        <!-- Hero секция -->
+        <section class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+            <!-- Анимированный фон -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-float"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse"></div>
+            </div>
+            
+            <div class="hero-content text-center relative z-10 max-w-5xl px-6">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%] leading-tight">
+                    Инвестируй в своё будущее
+                </h1>
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Цена курсов от 11 до 118 тысяч рублей. Станьте программистом, или мы вернем вам деньги
+                </p>
             </div>
         </section>
 
-        <section class="packages-detailed">
+        <!-- Пакеты услуг -->
+        <section class="packages-detailed py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Базовый пакет -->
+                    <div class="package-card bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green"></div>
+                        <div class="package-header mb-8">
+                            <h3 class="text-2xl font-bold text-primary-green mb-4">Базовый минимум</h3>
+                            <div class="price-tag text-3xl font-bold text-white mb-2">Цена по запросу</div>
+                        </div>
+                        <div class="package-content">
+                            <ul class="features text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Индивидуальные занятия с ментором 1 месяц</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Основы программирования</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Поддержка куратора</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Доступ к учебным материалам</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Проверка домашних заданий</span>
+                                </li>
+                            </ul>
+                            <button onclick="selectPackage('Базовый')" class="select-btn w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
+                                Выбрать базовый
+                            </button>
+                        </div>
+                    </div>
 
-            <div class="package-card">
-                <div class="package-header">
-                    <h3>Базовый минимум</h3>
-                    <div class="price-tag">Цена по запросу</div>
-                </div>
-                <div class="package-content">
-                    <ul class="features">
-                        <li>✓ Индивидуальные занятия с ментором 1 месяц</li>
-                        <li>✓ Основы программирования</li>
-                        <li>✓ Поддержка куратора</li>
-                        <li>✓ Доступ к учебным материалам</li>
-                        <li>✓ Проверка домашних заданий</li>
-                    </ul>
-                    <button class="select-btn" onclick="selectPackage('Базовый')">Выбрать базовый</button>
+                    <!-- Стандартный пакет -->
+                    <div class="package-card bg-gradient-to-r from-primary-green/15 to-dark-green/15 border border-primary-green/40 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/30 relative overflow-hidden group scale-105">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-green to-primary-green"></div>
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-neon-green to-primary-green text-bg-dark px-6 py-2 rounded-full text-sm font-bold">
+                            ПОПУЛЯРНЫЙ
+                        </div>
+                        <div class="package-header mb-8 mt-4">
+                            <h3 class="text-2xl font-bold text-neon-green mb-4">Стандарт</h3>
+                            <div class="price-tag text-3xl font-bold text-white mb-2">60 000 ₽</div>
+                            <p class="text-text-secondary text-sm">или рассрочка 6 000 ₽/мес</p>
+                        </div>
+                        <div class="package-content">
+                            <ul class="features text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-neon-green font-bold"></i>
+                                    <span>Все из базового пакета</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-neon-green font-bold"></i>
+                                    <span>Будкэмп 2 недели (интенсив)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-neon-green font-bold"></i>
+                                    <span>Стажировка 2 месяца</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-neon-green font-bold"></i>
+                                    <span>Помощь с трудоустройством</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-neon-green font-bold"></i>
+                                    <span>Сертификат об окончании</span>
+                                </li>
+                            </ul>
+                            <button onclick="selectPackage('Стандарт')" class="select-btn w-full bg-gradient-to-r from-neon-green to-primary-green text-bg-dark py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/30">
+                                Выбрать стандарт
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VIP пакет -->
+                    <div class="package-card bg-gradient-to-r from-primary-green/20 to-dark-green/20 border border-primary-green/40 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/30 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-neon-green"></div>
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary-green to-neon-green text-bg-dark px-6 py-2 rounded-full text-sm font-bold">
+                            VIP
+                        </div>
+                        <div class="package-header mb-8 mt-4">
+                            <h3 class="text-2xl font-bold text-primary-green mb-4">VIP</h3>
+                            <div class="price-tag text-3xl font-bold text-white mb-2">118 000 ₽</div>
+                            <p class="text-text-secondary text-sm">или рассрочка 12 000 ₽/мес</p>
+                        </div>
+                        <div class="package-content">
+                            <ul class="features text-left space-y-3 mb-8">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Все из стандартного пакета</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Персональный ментор 24/7</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Гарантия трудоустройства</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Подготовка к собеседованиям</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-primary-green font-bold"></i>
+                                    <span>Рекомендации в компании-партнеры</span>
+                                </li>
+                            </ul>
+                            <button onclick="selectPackage('VIP')" class="select-btn w-full bg-gradient-to-r from-primary-green to-neon-green text-bg-dark py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/30">
+                                Выбрать VIP
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="package-card">
-                <div class="package-header">
-                    <h3>База</h3>
-                    <div class="price-tag">Цена по запросу</div>
-                </div>
-                <div class="package-content">
-                    <span class="recommended">Рекомендуем</span>
-                    <ul class="features">
-
-                        <li>✓ Все из предыдущего пакета</li>
-                        <li>✓ Будкэмп с боевыми задачами</li>
-                        <li>✓ Стажировка в IT-компании (2 месяца)</li>
-                        <li>✓ Работа над реальными проектами</li>
-                    </ul>
-                    <button class="select-btn" onclick="selectPackage('Продвинутый')">Выбрать продвинутый</button>
-                </div>
-            </div>
-            <div class="package-card">
-                <div class="package-header">
-                    <h3>Senior</h3>
-                    <div class="price-tag">Цена по запросу</div>
-                </div>
-                <div class="package-content">
-                    <ul class="features">
-                        <li>✓ Все из предыдущего пакета</li>
-                        <li>✓ Гарантия трудоустройства</li>
-                        <li>✓ Помощь с резюме и собеседованиями</li>
-                    </ul>
-                    <button class="select-btn" onclick="selectPackage('VIP')">Выбрать VIP</button>
-                </div>
-            </div>
-
         </section>
 
-        <section class="comparison">
-            <h2>Сравнение пакетов</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Функции</th>
-                        <th>Базовый</th>
-                        <th>Продвинутый</th>
-                        <th>VIP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Индивидуальные занятия</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Будкэмп</td>
-                        <td>-</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Стажировка</td>
-                        <td>-</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Гарантия трудоустройства</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Персональное сопровождение</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>✓</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Сравнение пакетов -->
+        <section class="comparison py-20 bg-bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
+                    Сравнение пакетов
+                </h2>
+                
+                <div class="bg-bg-light rounded-3xl p-8 border border-primary-green/10 overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-primary-green/20">
+                                <th class="p-4 text-primary-green font-semibold">Функция</th>
+                                <th class="p-4 text-center text-primary-green font-semibold">Базовый</th>
+                                <th class="p-4 text-center text-neon-green font-semibold">Стандарт</th>
+                                <th class="p-4 text-center text-primary-green font-semibold">VIP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-primary-green/10">
+                                <td class="p-4 text-text-secondary">Индивидуальные занятия</td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-neon-green"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                            </tr>
+                            <tr class="border-b border-primary-green/10">
+                                <td class="p-4 text-text-secondary">Будкэмп</td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-neon-green"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                            </tr>
+                            <tr class="border-b border-primary-green/10">
+                                <td class="p-4 text-text-secondary">Стажировка</td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-neon-green"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                            </tr>
+                            <tr class="border-b border-primary-green/10">
+                                <td class="p-4 text-text-secondary">Гарантия трудоустройства</td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                            </tr>
+                            <tr class="border-b border-primary-green/10">
+                                <td class="p-4 text-text-secondary">Персональный ментор 24/7</td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-times text-text-secondary"></i></td>
+                                <td class="p-4 text-center"><i class="fas fa-check text-primary-green"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
-        <section class="payment-info">
-            <h2>Условия оплаты</h2>
-            <p>Мы предлагаем гибкие условия оплаты обучения:</p>
-            <ul>
-                <li>Оплата по частям (рассрочка)</li>
-                <li>Возможность оплаты после первого месяца обучения</li>
-                <li>Возврат средств в течение 7 дней после начала курса</li>
-            </ul>
+        <!-- CTA секция -->
+        <section class="cta-section py-20 bg-gradient-to-b from-bg-dark to-bg-darker">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
+                    Начните свой путь в IT сегодня
+                </h2>
+                <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                    Выберите подходящий пакет и станьте профессиональным backend-разработчиком
+                </p>
+                <button onclick="openModal()" class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
+                    <span class="relative z-10">Записаться на курс</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                </button>
+            </div>
         </section>
     </main>
 
     <!-- Модальное окно формы -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Запишитесь на курс</h2>
-            <form id="registration-form">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
+    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-bg-darker/95 backdrop-blur-lg">
+        <div class="bg-bg-light border border-primary-green/30 rounded-3xl p-8 w-full max-w-md mx-4 relative shadow-2xl shadow-primary-green/20">
+            <button onclick="closeModal()" class="absolute right-6 top-6 text-text-secondary hover:text-primary-green transition-colors duration-300 text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-2xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Запишитесь на курс</h2>
+            <form id="registration-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-primary-green font-semibold">Имя:</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="telegram">Telegram username:</label>
-                    <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+                <div>
+                    <label for="telegram" class="block mb-2 text-primary-green font-semibold">Telegram username:</label>
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
-                <div class="form-group">
-                    <label for="level">Ваш уровень:</label>
-                    <select id="level" name="level">
+                <div>
+                    <label for="level" class="block mb-2 text-primary-green font-semibold">Ваш уровень:</label>
+                    <select id="level" name="level" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                         <option value="beginner">Полный новичок</option>
                         <option value="basic">Есть базовые знания</option>
                         <option value="intermediate">Уже писал код</option>
@@ -167,51 +302,71 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="goal">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3"
-                        placeholder="Например: найти работу backend-разработчиком"></textarea>
+                <div>
+                    <label for="goal" class="block mb-2 text-primary-green font-semibold">Ваша цель:</label>
+                    <select id="goal" name="goal" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                        <option value="">Выберите вашу цель</option>
+                        <option value="Найти работу backend-разработчиком">Найти работу backend-разработчиком</option>
+                        <option value="Получить новые навыки для текущей работы">Получить новые навыки для текущей работы</option>
+                        <option value="Создать собственный проект">Создать собственный проект</option>
+                        <option value="Повысить квалификацию">Повысить квалификацию</option>
+                    </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="package">Выбранный пакет:</label>
-                    <input type="text" id="package" name="package" readonly>
-                </div>
-
-                <button type="submit">Отправить заявку</button>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
+                    Отправить заявку
+                </button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Главная</a></li>
+                        <li><a href="prices.html" class="text-primary-green">Цены</a></li>
+                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 

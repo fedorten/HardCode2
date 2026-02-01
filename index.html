@@ -22,6 +22,39 @@
                     },
                     fontFamily: {
                         'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 255, 136, 0.6)' }
+                        }
+                    },
+                    backgroundSize: {
+                        '400%': '400% 400%'
                     }
                 }
             }
@@ -33,35 +66,64 @@
     <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
+                <h1
+                    class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">
+                    HardCode</h1>
             </div>
             <ul class="nav-links flex space-x-8">
-                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
-                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
-                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span
+                            class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
+                </li>
+                <li><a href="courses.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span
+                            class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
+                </li>
+                <li><a href="about.html"
+                        class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О
+                        нас<span
+                            class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main class="pt-20">
-        <section class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+        <section
+            class="hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
             <!-- Анимированный фон -->
-            <div class="absolute inset-0">
-                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-pulse"></div>
-                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-float">
+                </div>
+                <div
+                    class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse-slow">
+                </div>
+                <div class="absolute top-1/3 right-1/4 w-48 h-48 bg-dark-green/3 rounded-full blur-2xl animate-float"
+                    style="animation-delay: 2s"></div>
+                <div class="absolute bottom-1/3 left-1/3 w-64 h-64 bg-primary-green/4 rounded-full blur-2xl animate-pulse-slow"
+                    style="animation-delay: 3s"></div>
             </div>
-            
+
             <div class="hero-content text-center relative z-10 max-w-5xl px-6">
-                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent leading-tight">
+                <h1
+                    class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent leading-tight animate-gradient bg-[length:400%_400%]">
                     HardCode - Онлайн школа для взрослых
                 </h1>
-                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto">
-                    Научись программировать на настоящих боевых задачах и найди работу с зарплатой от 140к
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Научись <span class="text-primary-green font-bold">программировать</span> на настоящих
+                    <span
+                        class="bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent font-black">боевых
+                        задачах</span> и найди
+                    <span class="text-primary-green font-semibold">работу</span> с зарплатой
+                    <span
+                        class="bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent font-black text-2xl">от
+                        140к</span>
                 </p>
-                
+
                 <!-- Блок преимуществ -->
                 <div class="flex flex-wrap justify-center gap-6 mb-8">
-                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+                    <div
+                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
                         <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
                             <i class="fas fa-users text-bg-dark font-bold"></i>
                         </div>
@@ -70,8 +132,9 @@
                             <div class="text-sm text-text-secondary">Учеников</div>
                         </div>
                     </div>
-                    
-                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+
+                    <div
+                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
                         <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
                             <i class="fas fa-user-graduate text-bg-dark font-bold"></i>
                         </div>
@@ -80,8 +143,9 @@
                             <div class="text-sm text-text-secondary">Обучение</div>
                         </div>
                     </div>
-                    
-                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
+
+                    <div
+                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl px-6 py-4 flex items-center gap-3 backdrop-blur-sm">
                         <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center">
                             <i class="fas fa-star text-bg-dark font-bold"></i>
                         </div>
@@ -91,79 +155,244 @@
                         </div>
                     </div>
                 </div>
-                
-                <button onclick="openModal()" class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
+
+                <button onclick="openModal()"
+                    class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
                     <span class="relative z-10">Записаться на курс</span>
-                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                    <div
+                        class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500">
+                    </div>
                 </button>
+            </div>
+        </section>
+
+        <!-- Видео секция о школе -->
+        <section class="relative py-20 bg-gradient-to-b from-bg-dark via-bg-light to-bg-darker overflow-hidden">
+            <!-- Анимированные фоновые элементы -->
+            <div class="absolute inset-0">
+                <div class="absolute top-10 left-10 w-32 h-32 bg-primary-green/5 rounded-full blur-2xl animate-float">
+                </div>
+                <div
+                    class="absolute top-1/3 right-20 w-48 h-48 bg-neon-green/5 rounded-full blur-3xl animate-pulse-slow">
+                </div>
+                <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-dark-green/5 rounded-full blur-xl animate-float"
+                    style="animation-delay: 2s"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
+                        Узнайте больше о нашей школе
+                    </h2>
+                    <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        Посмотрите <span class="text-primary-green font-semibold">как проходит обучение</span> в
+                        <span
+                            class="bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent font-black">HardCode</span>.
+                        Наши преподаватели и ученики делятся опытом и рассказывают о своем пути в IT.
+                    </p>
+                </div>
+
+                <!-- Видео контейнер -->
+                <div class="max-w-4xl mx-auto">
+                    <div
+                        class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary-green/20 group hover:shadow-primary-green/40 transition-all duration-500 hover:-translate-y-2">
+                        <!-- Видео плеер -->
+                        <video id="schoolVideo" class="w-full aspect-video bg-black"
+                            poster="https://picsum.photos/seed/hardcode-video-poster/1200/675.jpg" controls
+                            preload="metadata">
+                            <source src="#" type="video/mp4">
+                            <!-- Заглушка для будущего видео -->
+                            <div class="flex items-center justify-center h-full">
+                                <div class="text-center">
+                                    <div
+                                        class="w-24 h-24 bg-primary-green/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                                        <i class="fas fa-play text-primary-green text-3xl ml-1"></i>
+                                    </div>
+                                    <p class="text-white text-lg font-semibold">Видео о школе HardCode</p>
+                                    <p class="text-text-secondary">Здесь будет видео о процессе обучения</p>
+                                </div>
+                            </div>
+                        </video>
+
+                        <!-- Кастомный оверлей для видео -->
+                        <div id="videoOverlay"
+                            class="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-transparent to-transparent opacity-100 transition-opacity duration-500 pointer-events-none">
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <h3 class="text-2xl font-bold text-white mb-2">Начните свой путь в IT сегодня</h3>
+                                <p class="text-text-secondary mb-4">Присоединяйтесь к 1200+ успешных выпускникам</p>
+                                <button onclick="openModal()"
+                                    class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark px-8 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/30">
+                                    Записаться на курс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Преимущества видео блока -->
+                    <div class="grid md:grid-cols-3 gap-6 mt-12">
+                        <div class="text-center group">
+                            <div
+                                class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-green/20 transition-colors duration-300">
+                                <i class="fas fa-video text-primary-green text-2xl"></i>
+                            </div>
+                            <h4 class="text-primary-green font-semibold mb-2">Реальный процесс</h4>
+                            <p class="text-text-secondary text-sm">Посмотрите как проходят занятия и стажировки</p>
+                        </div>
+
+                        <div class="text-center group">
+                            <div
+                                class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-green/20 transition-colors duration-300">
+                                <i class="fas fa-users text-primary-green text-2xl"></i>
+                            </div>
+                            <h4 class="text-primary-green font-semibold mb-2">Выпускники</h4>
+                            <p class="text-text-secondary text-sm">Истории успеха наших учеников</p>
+                        </div>
+
+                        <div class="text-center group">
+                            <div
+                                class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-green/20 transition-colors duration-300">
+                                <i class="fas fa-graduation-cap text-primary-green text-2xl"></i>
+                            </div>
+                            <h4 class="text-primary-green font-semibold mb-2">Преподаватели</h4>
+                            <p class="text-text-secondary text-sm">Наши менторы и методисты</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="max-w-7xl mx-auto px-6 py-20">
             <div class="bg-bg-light rounded-3xl p-8 md:p-12 border border-primary-green/10">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
                     Хардкорная бэкэнд разработка
                 </h2>
-                <p class="text-xl text-text-secondary text-center mb-12 max-w-4xl mx-auto">
-                    Интенсивный курс для тех, кто хочет стать профессиональным backend-разработчиком. За 3-4 месяца вы
-                    получите реальный опыт и сможете работать middle разработчиком с зарплатой от 140к.
+                <p class="text-xl text-text-secondary text-center mb-12 max-w-4xl mx-auto leading-relaxed">
+                    <span class="text-primary-green font-semibold">Интенсивный курс</span> для тех, кто хочет стать
+                    <span
+                        class="bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent font-black">профессиональным
+                        backend-разработчиком</span>.
+                    За <span class="text-primary-green font-bold">3-4 месяца</span> вы получите
+                    <span class="text-primary-green font-semibold">реальный опыт</span> и сможете работать
+                    <span
+                        class="bg-gradient-to-r from-neon-green to-primary-green bg-clip-text text-transparent font-black">middle
+                        разработчиком</span>
+                    с зарплатой <span class="text-primary-green font-bold text-2xl">от 140к</span>.
                 </p>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-primary-green mb-8 text-center">Технологии, которые вы освоите:</h3>
+                    <h3 class="text-2xl font-bold text-primary-green mb-8 text-center">
+                        <span
+                            class="bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
+                            Технологии, которые вы освоите:
+                        </span>
+                    </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Python 3.11+</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Django / DRF</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">FastAPI</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">PostgreSQL</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">MongoDB</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Redis</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Docker</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Kubernetes</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Git / GitHub</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Linux / Bash</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Nginx</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">CI/CD</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">AI инструменты</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">GraphQL</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">gRPC</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Celery</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">WebSocket</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">SQLAlchemy</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Pytest</div>
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">Микросервисы</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Python 3.11+</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Django / DRF</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            FastAPI</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            PostgreSQL</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            MongoDB</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Redis</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Docker</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Kubernetes</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Git / GitHub</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Linux / Bash</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Nginx</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            CI/CD</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            AI инструменты</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            GraphQL</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            gRPC</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Celery</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            WebSocket</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            SQLAlchemy</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Pytest</div>
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-xl p-4 text-center font-semibold text-primary-green hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary-green/20">
+                            Микросервисы</div>
                     </div>
                 </div>
 
                 <div>
                     <h3 class="text-2xl font-bold text-primary-green mb-8 text-center">Ваш путь в IT:</h3>
                     <div class="space-y-4">
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">1</div>
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">
+                                    1</div>
                                 <div>
                                     <div class="font-bold text-primary-green mb-1">1 месяц</div>
-                                    <div class="text-text-secondary">Освоение основ (если у вас сейчас нулевой уровень)</div>
+                                    <div class="text-text-secondary">Освоение основ (если у вас сейчас нулевой уровень)
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">2</div>
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">
+                                    2</div>
                                 <div>
                                     <div class="font-bold text-primary-green mb-1">2 недели</div>
-                                    <div class="text-text-secondary">Будкэмп - решение реальных боевых задач по 4 часа в день в команде и под руководством ментора</div>
+                                    <div class="text-text-secondary">Будкэмп - решение реальных боевых задач по 4 часа в
+                                        день в команде и под руководством ментора</div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
+
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl p-6 hover:border-primary-green/40 transition-all duration-300 hover:translate-x-2">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">3</div>
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center font-black text-bg-dark flex-shrink-0">
+                                    3</div>
                                 <div>
                                     <div class="font-bold text-primary-green mb-1">2 месяца</div>
-                                    <div class="text-text-secondary">Стажировка в реальной IT-компании с разработкой настоящих продуктов</div>
+                                    <div class="text-text-secondary">Стажировка в реальной IT-компании с разработкой
+                                        настоящих продуктов</div>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +403,8 @@
 
         <section class="bg-bg-darker py-20">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
                     Наши преподаватели
                 </h2>
                 <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
@@ -183,54 +413,78 @@
 
                 <!-- Индивидуальные преподаватели -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-primary-green mb-3 text-center">📚 Индивидуальные преподаватели</h3>
-                    <p class="text-text-secondary text-center mb-8">Мастера педагогики с опытом обучения более 100+ студентов</p>
+                    <h3 class="text-2xl font-bold text-primary-green mb-3 text-center">Индивидуальные преподаватели</h3>
+                    <p class="text-text-secondary text-center mb-8">Мастера педагогики с опытом обучения более 100+
+                        студентов</p>
 
                     <!-- Карусель преподавателей -->
                     <div class="relative">
                         <div class="carousel-container overflow-hidden rounded-2xl">
-                            <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="teachersCarousel">
+                            <div class="carousel-track flex transition-transform duration-500 ease-in-out"
+                                id="teachersCarousel">
                                 <div class="carousel-item min-w-full px-4">
-                                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
+                                    <div
+                                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
                                         <div class="flex gap-6">
                                             <div class="flex-shrink-0 relative">
-                                                <img src="https://picsum.photos/seed/teacher1/200/200.jpg" alt="Максим Волкова" class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
-                                                <div class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Педагог</div>
+                                                <img src="https://picsum.photos/seed/teacher1/200/200.jpg"
+                                                    alt="Максим Волкова"
+                                                    class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
+                                                <div
+                                                    class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
+                                                    Педагог</div>
                                             </div>
                                             <div class="flex-1">
-                                                <h3 class="text-xl font-bold text-primary-green mb-1">Максим Волкова</h3>
-                                                <p class="text-text-secondary font-semibold mb-3">Senior Python Developer @ СберТех</p>
-                                                <p class="text-white mb-4">🎯 <strong class="text-neon-green">Сильные стороны:</strong> Объяснение сложных концепций, создание индивидуальных программ обучения</p>
+                                                <h3 class="text-xl font-bold text-primary-green mb-1">Максим Волкова
+                                                </h3>
+                                                <p class="text-text-secondary font-semibold mb-3">Senior Python
+                                                    Developer @ СберТех</p>
+                                                <p class="text-white mb-4"><strong class="text-neon-green">Сильные
+                                                        стороны:</strong> Объяснение сложных концепций, создание
+                                                    индивидуальных программ обучения</p>
                                                 <div class="space-y-2">
-                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
-                                                        👥 Обучил 200+ студентов
+                                                    <div
+                                                        class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        Обучил 200+ студентов
                                                     </div>
-                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
-                                                        📖 Автор 5 учебных программ по Python
+                                                    <div
+                                                        class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        Автор 5 учебных программ по Python
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="carousel-item min-w-full px-4">
-                                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
+                                    <div
+                                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-primary-green">
                                         <div class="flex gap-6">
                                             <div class="flex-shrink-0 relative">
-                                                <img src="https://picsum.photos/seed/teacher2/200/200.jpg" alt="Михаил Королев" class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
-                                                <div class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Методист</div>
+                                                <img src="https://picsum.photos/seed/teacher2/200/200.jpg"
+                                                    alt="Михаил Королев"
+                                                    class="w-24 h-24 rounded-full border-4 border-primary-green object-cover">
+                                                <div
+                                                    class="absolute -bottom-2 -right-2 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
+                                                    Методист</div>
                                             </div>
                                             <div class="flex-1">
-                                                <h3 class="text-xl font-bold text-primary-green mb-1">Михаил Королев</h3>
-                                                <p class="text-text-secondary font-semibold mb-3">Backend Architect @ VK</p>
-                                                <p class="text-white mb-4">🎯 <strong class="text-neon-green">Сильные стороны:</strong> Структурирование материала, пошаговое обучение, адаптация под уровень студента</p>
+                                                <h3 class="text-xl font-bold text-primary-green mb-1">Михаил Королев
+                                                </h3>
+                                                <p class="text-text-secondary font-semibold mb-3">Backend Architect @ VK
+                                                </p>
+                                                <p class="text-white mb-4"><strong class="text-neon-green">Сильные
+                                                        стороны:</strong> Структурирование материала, пошаговое
+                                                    обучение, адаптация под уровень студента</p>
                                                 <div class="space-y-2">
-                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
-                                                        🎓 10 лет преподавательского опыта
+                                                    <div
+                                                        class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        10 лет преподавательского опыта
                                                     </div>
-                                                    <div class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
-                                                        🔥 95% студентов находят работу после обучения
+                                                    <div
+                                                        class="bg-primary-green/5 border-l-3 border-primary-green p-3 rounded-r-lg hover:bg-primary-green/10 transition-all duration-300 hover:translate-x-2">
+                                                        95% студентов находят работу после обучения
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,59 +493,78 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Кнопки навигации -->
-                        <button onclick="previousTeacher()" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                        <button onclick="previousTeacher()"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <button onclick="nextTeacher()" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                        <button onclick="nextTeacher()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
                             <i class="fas fa-chevron-right"></i>
                         </button>
-                        
+
                         <!-- Индикаторы -->
                         <div class="flex justify-center gap-2 mt-6">
-                            <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300" id="teacherIndicator0"></span>
-                            <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="teacherIndicator1"></span>
+                            <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300"
+                                id="teacherIndicator0"></span>
+                            <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300"
+                                id="teacherIndicator1"></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Менторы -->
                 <div>
-                    <h3 class="text-2xl font-bold text-neon-green mb-3 text-center">🚀 Менторы и эксперты</h3>
-                    <p class="text-text-secondary text-center mb-8">Профессионалы с опытом реальных проектов в ведущих компаниях</p>
+                    <h3 class="text-2xl font-bold text-neon-green mb-3 text-center"> Менторы и эксперты</h3>
+                    <p class="text-text-secondary text-center mb-8">Профессионалы с опытом реальных проектов в ведущих
+                        компаниях</p>
 
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
                             <div class="flex gap-6">
                                 <div class="flex-shrink-0 relative">
-                                    <img src="https://picsum.photos/seed/mentor1/200/200.jpg" alt="Алексей Тихонов" class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
-                                    <div class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Эксперт</div>
+                                    <img src="https://picsum.photos/seed/mentor1/200/200.jpg" alt="Алексей Тихонов"
+                                        class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
+                                    <div
+                                        class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
+                                        Эксперт</div>
                                 </div>
                                 <div class="flex-1">
                                     <h3 class="text-xl font-bold text-neon-green mb-1">Алексей Тихонов</h3>
                                     <p class="text-text-secondary font-semibold mb-3">Principal Engineer @ Яндекс</p>
-                                    <p class="text-white mb-4">🎯 <strong class="text-primary-green">Сильные стороны:</strong> Высоконагруженные системы, архитектура микросервисов, code review</p>
+                                    <p class="text-white mb-4"> <strong class="text-primary-green">Сильные
+                                            стороны:</strong> Высоконагруженные системы, архитектура микросервисов, code
+                                        review</p>
                                     <div class="space-y-2">
-                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">⚡ Разработал системы для 10М+ пользователей</div>
-                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">💼 15 лет в enterprise backend</div>
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">
+                                            Разработал системы для 10М+ пользователей</div>
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">
+                                            15 лет в enterprise backend</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                        <div
+                            class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 border-l-4 border-l-neon-green hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
                             <div class="flex gap-6">
                                 <div class="flex-shrink-0 relative">
-                                    <img src="https://picsum.photos/seed/mentor2/200/200.jpg" alt="Роман Соколов" class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
-                                    <div class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">DevOps</div>
+                                    <img src="https://picsum.photos/seed/mentor2/200/200.jpg" alt="Роман Соколов"
+                                        class="w-24 h-24 rounded-full border-4 border-neon-green object-cover">
+                                    <div
+                                        class="absolute -bottom-2 -right-2 bg-neon-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
+                                        DevOps</div>
                                 </div>
                                 <div class="flex-1">
                                     <h3 class="text-xl font-bold text-neon-green mb-1">Роман Соколов</h3>
                                     <p class="text-text-secondary font-semibold mb-3">DevOps Lead @ Ozon</p>
-                                    <p class="text-white mb-4">🎯 <strong class="text-primary-green">Сильные стороны:</strong> CI/CD, Kubernetes, продакшн-эксплуатация</p>
+                                    <p class="text-white mb-4"> <strong class="text-primary-green">Сильные
+                                            стороны:</strong> CI/CD, Kubernetes, продакшн-эксплуатация</p>
                                     <div class="space-y-2">
-                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">Эксперт в области Деплоя ваших проектов</div>
+                                        <div class="bg-primary-green/5 border-l-3 border-neon-green p-3 rounded-r-lg">
+                                            Эксперт в области Деплоя ваших проектов</div>
                                     </div>
                                 </div>
                             </div>
@@ -303,7 +576,8 @@
 
         <section class="py-20">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
                     Наши ученики
                 </h2>
                 <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
@@ -313,58 +587,88 @@
                 <!-- Карусель учеников -->
                 <div class="relative">
                     <div class="carousel-container overflow-hidden rounded-2xl">
-                        <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="studentsCarousel">
+                        <div class="carousel-track flex transition-transform duration-500 ease-in-out"
+                            id="studentsCarousel">
                             <div class="carousel-item min-w-full px-4">
-                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                <div
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
                                     <div class="flex gap-6">
                                         <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student1/200/200.jpg" alt="Александр Петров" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                            <img src="https://picsum.photos/seed/student1/200/200.jpg"
+                                                alt="Александр Петров"
+                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
                                         </div>
                                         <div class="flex-1">
                                             <h3 class="text-xl font-bold text-primary-green mb-1">Александр Петров</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Middle Python Developer @ Яндекс</p>
-                                            <p class="text-white mb-4 italic">"Пришел в HardCode с нуля. За 4 месяца прошел от основ до реальных проектов. Сейчас работаю над высоконагруженными системами с зарплатой 220к."</p>
+                                            <p class="text-text-secondary font-semibold mb-3">Middle Python Developer @
+                                                Яндекс</p>
+                                            <p class="text-white mb-4 italic">"Пришел в HardCode с нуля. За 4 месяца
+                                                прошел от основ до реальных проектов. Сейчас работаю над
+                                                высоконагруженными системами с зарплатой 220к."</p>
                                             <div class="flex flex-wrap gap-3">
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 220к/мес</span>
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4 месяца</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
+                                                    220к/мес</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
+                                                    4 месяца</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="carousel-item min-w-full px-4">
-                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                <div
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
                                     <div class="flex gap-6">
                                         <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student2/200/200.jpg" alt="Мария Иванова" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                            <img src="https://picsum.photos/seed/student2/200/200.jpg"
+                                                alt="Мария Иванова"
+                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
                                         </div>
                                         <div class="flex-1">
                                             <h3 class="text-xl font-bold text-primary-green mb-1">Мария Иванова</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Backend Developer @woman.ru</p>
-                                            <p class="text-white mb-4 italic">"Была маркетологом, решила сменить профессию. Интенсивный будкэмп помог мне быстро набраться опыта. Устроилась через месяц после окончания стажировки"</p>
+                                            <p class="text-text-secondary font-semibold mb-3">Backend Developer
+                                                @woman.ru</p>
+                                            <p class="text-white mb-4 italic">"Была маркетологом, решила сменить
+                                                профессию. Интенсивный будкэмп помог мне быстро набраться опыта.
+                                                Устроилась через месяц после окончания стажировки"</p>
                                             <div class="flex flex-wrap gap-3">
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 200к/мес</span>
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4.5 месяца</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
+                                                    200к/мес</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">4.5
+                                                    месяца</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="carousel-item min-w-full px-4">
-                                <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
+                                <div
+                                    class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20">
                                     <div class="flex gap-6">
                                         <div class="flex-shrink-0">
-                                            <img src="https://picsum.photos/seed/student3/200/200.jpg" alt="Дмитрий Сидоров" class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
+                                            <img src="https://picsum.photos/seed/student3/200/200.jpg"
+                                                alt="Дмитрий Сидоров"
+                                                class="w-20 h-20 rounded-full border-2 border-primary-green object-cover">
                                         </div>
                                         <div class="flex-1">
                                             <h3 class="text-xl font-bold text-primary-green mb-1">Дмитрий Сидоров</h3>
-                                            <p class="text-text-secondary font-semibold mb-3">Junior Python Developer @Адмиралтейские верфи</p>
-                                            <p class="text-white mb-4 italic">"Понравились индивидуальные занятия за прайс намного ниже рынка"</p>
+                                            <p class="text-text-secondary font-semibold mb-3">Junior Python Developer
+                                                @Адмиралтейские верфи</p>
+                                            <p class="text-white mb-4 italic">"Понравились индивидуальные занятия за
+                                                прайс намного ниже рынка"</p>
                                             <div class="flex flex-wrap gap-3">
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">💰 180к/мес</span>
-                                                <span class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">⏱️ 4 месяца</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">
+                                                    180к/мес</span>
+                                                <span
+                                                    class="bg-primary-green/10 border border-primary-green/30 rounded-full px-4 py-2 text-sm font-semibold text-primary-green">4
+                                                    месяца</span>
                                             </div>
                                         </div>
                                     </div>
@@ -372,20 +676,25 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Кнопки навигации -->
-                    <button onclick="previousStudent()" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                    <button onclick="previousStudent()"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button onclick="nextStudent()" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
+                    <button onclick="nextStudent()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-green/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green/30 transition-all duration-300 border border-primary-green/30">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    
+
                     <!-- Индикаторы -->
                     <div class="flex justify-center gap-2 mt-6">
-                        <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300" id="studentIndicator0"></span>
-                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="studentIndicator1"></span>
-                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300" id="studentIndicator2"></span>
+                        <span class="w-2 h-2 rounded-full bg-primary-green transition-all duration-300"
+                            id="studentIndicator0"></span>
+                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300"
+                            id="studentIndicator1"></span>
+                        <span class="w-2 h-2 rounded-full bg-primary-green/30 transition-all duration-300"
+                            id="studentIndicator2"></span>
                     </div>
                 </div>
             </div>
@@ -393,16 +702,20 @@
 
         <section class="bg-bg-darker py-20">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                <h2
+                    class="text-4xl md:text-5xl font-black text-center mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
                     Выберите свой пакет
                 </h2>
                 <p class="text-xl text-text-secondary text-center mb-12 max-w-3xl mx-auto">
                     Выберите подходящий вам формат обучения
                 </p>
-                
+
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green"></div>
+                    <div
+                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green">
+                        </div>
                         <h3 class="text-2xl font-bold text-primary-green mb-6">Базовый</h3>
                         <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
                         <ul class="text-left space-y-3 mb-8">
@@ -419,14 +732,20 @@
                                 <span>Поддержка куратора</span>
                             </li>
                         </ul>
-                        <button onclick="selectPackage('Базовый')" class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
+                        <button onclick="selectPackage('Базовый')"
+                            class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
                             Выбрать пакет
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-r from-primary-green/15 to-dark-green/15 border border-primary-green/40 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/30 relative overflow-hidden group scale-105">
-                        <div class="absolute top-4 right-4 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">Популярный</div>
-                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-green to-primary-green"></div>
+                    <div
+                        class="bg-gradient-to-r from-primary-green/15 to-dark-green/15 border border-primary-green/40 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/30 relative overflow-hidden group scale-105">
+                        <div
+                            class="absolute top-4 right-4 bg-primary-green text-bg-dark px-3 py-1 rounded-full text-xs font-bold uppercase">
+                            Популярный</div>
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-green to-primary-green">
+                        </div>
                         <h3 class="text-2xl font-bold text-neon-green mb-6">Продвинутый</h3>
                         <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
                         <ul class="text-left space-y-3 mb-8">
@@ -443,13 +762,17 @@
                                 <span>Стажировка в IT-компании</span>
                             </li>
                         </ul>
-                        <button onclick="selectPackage('Продвинутый')" class="w-full bg-gradient-to-r from-neon-green to-primary-green text-bg-dark py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300">
+                        <button onclick="selectPackage('Продвинутый')"
+                            class="w-full bg-gradient-to-r from-neon-green to-primary-green text-bg-dark py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300">
                             Выбрать пакет
                         </button>
                     </div>
 
-                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
-                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green"></div>
+                    <div
+                        class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-3xl p-8 text-center hover:-translate-y-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-green/20 relative overflow-hidden group">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-green to-dark-green">
+                        </div>
                         <h3 class="text-2xl font-bold text-primary-green mb-6">VIP</h3>
                         <div class="text-3xl font-bold text-white mb-8">Цена по запросу</div>
                         <ul class="text-left space-y-3 mb-8">
@@ -466,7 +789,8 @@
                                 <span>Гарантия трудоустройства</span>
                             </li>
                         </ul>
-                        <button onclick="selectPackage('VIP')" class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
+                        <button onclick="selectPackage('VIP')"
+                            class="w-full bg-transparent border-2 border-primary-green text-primary-green py-3 rounded-full font-semibold hover:bg-primary-green hover:text-bg-dark transition-all duration-300 hover:scale-105">
                             Выбрать пакет
                         </button>
                     </div>
@@ -477,25 +801,32 @@
 
     <!-- Модальное окно формы -->
     <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-bg-darker/95 backdrop-blur-lg">
-        <div class="bg-bg-light border border-primary-green/30 rounded-3xl p-8 w-full max-w-md mx-4 relative shadow-2xl shadow-primary-green/20">
-            <button onclick="closeModal()" class="absolute right-6 top-6 text-text-secondary hover:text-primary-green transition-colors duration-300 text-3xl">
+        <div
+            class="bg-bg-light border border-primary-green/30 rounded-3xl p-8 w-full max-w-md mx-4 relative shadow-2xl shadow-primary-green/20">
+            <button onclick="closeModal()"
+                class="absolute right-6 top-6 text-text-secondary hover:text-primary-green transition-colors duration-300 text-3xl">
                 <i class="fas fa-times"></i>
             </button>
-            <h2 class="text-2xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Запишитесь на курс</h2>
+            <h2
+                class="text-2xl font-black text-center mb-6 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">
+                Запишитесь на курс</h2>
             <form id="registration-form" class="space-y-6">
                 <div>
                     <label for="name" class="block mb-2 text-primary-green font-semibold">Имя:</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
                 <div>
                     <label for="telegram" class="block mb-2 text-primary-green font-semibold">Telegram username:</label>
-                    <input type="text" id="telegram" name="telegram" placeholder="@username" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                    <input type="text" id="telegram" name="telegram" placeholder="@username" required
+                        class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                 </div>
 
                 <div>
                     <label for="level" class="block mb-2 text-primary-green font-semibold">Ваш уровень:</label>
-                    <select id="level" name="level" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                    <select id="level" name="level"
+                        class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
                         <option value="beginner">Полный новичок</option>
                         <option value="basic">Есть базовые знания</option>
                         <option value="intermediate">Уже писал код</option>
@@ -505,20 +836,233 @@
 
                 <div>
                     <label for="goal" class="block mb-2 text-primary-green font-semibold">Ваша цель:</label>
-                    <textarea id="goal" name="goal" rows="3" placeholder="Например: найти работу backend-разработчиком" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300 resize-none"></textarea>
+                    <select id="goal" name="goal"
+                        class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                        <option value="">Выберите вашу цель</option>
+                        <option value="Найти работу backend-разработчиком">Найти работу backend-разработчиком</option>
+                        <option value="Получить новые навыки для текущей работы">Получить новые навыки для текущей
+                            работы</option>
+                        <option value="Создать собственный проект">Создать собственный проект</option>
+                        <option value="Повысить квалификацию">Повысить квалификацию</option>
+                    </select>
                 </div>
 
-                <div>
-                    <label for="package" class="block mb-2 text-primary-green font-semibold">Выбранный пакет:</label>
-                    <input type="text" id="package" name="package" readonly class="w-full px-4 py-3 bg-bg-dark/50 border border-primary-green/20 rounded-xl text-primary-green">
-                </div>
-
-                <button type="submit" class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
                     Отправить заявку
                 </button>
             </form>
         </div>
     </div>
+
+    <!-- FAQ Секция -->
+    <section class="py-20 bg-gradient-to-b from-bg-dark to-bg-darker border-t border-gray-800/30">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">
+                    Часто задаваемые вопросы
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Ответы на популярные вопросы о нашем курсе и процессе обучения
+                </p>
+            </div>
+
+            <!-- FAQ Аккордеон -->
+            <div class="space-y-4" id="faqAccordion">
+                <!-- Вопрос 1 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">01</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Сколько длится обучение?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                Полный курс обучения занимает <span class="text-primary-green font-semibold">3-4
+                                    месяца</span>.
+                                Программа включает 1 месяц изучения основ (если нужен), 2 недели интенсивного будкэмпа
+                                и 2 месяца стажировки в реальной IT-компании.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">02</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Какие требования к поступающим?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                Мы принимаем студентов с <span class="text-primary-green font-semibold">любым уровнем
+                                    подготовки</span> —
+                                от полных новичков до тех, кто уже имеет опыт программирования.
+                                Главное — желание учиться и развиваться в IT сфере.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вопрос 3 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">03</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Выдается ли сертификат?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                Да, после успешного завершения курса мы выдаем <span
+                                    class="text-primary-green font-semibold">официальный сертификат</span>,
+                                который подтверждает вашу квалификацию. Но главное — это реальный опыт и портфолио
+                                проектов, которые вы создадите во время обучения.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">04</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Какой формат обучения?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                Обучение проходит в формате <span
+                                    class="text-primary-green font-semibold">индивидуальных занятий 1 на 1</span> с
+                                преподавателем. Это позволяет адаптировать программу под ваши цели и темп обучения.
+                                Занятия проходят онлайн в удобное для вас время.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">05</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Можно ли платить частями?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                Да, мы предлагаем <span class="text-primary-green font-semibold">гибкие условия
+                                    оплаты</span> —
+                                можно оплатить курс полностью или разбить на части по мере прохождения программы.
+                                Детальные условия обсуждаются индивидуально при заключении договора.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div
+                    class="faq-item bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/30">
+                    <button class="faq-trigger w-full px-8 py-6 text-left flex items-center justify-between group"
+                        onclick="toggleFAQ(this)">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-primary-green/10 rounded-lg flex items-center justify-center group-hover:bg-primary-green/20 transition-colors">
+                                <span class="text-primary-green font-bold">06</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white pr-8">Что входит в стоимость?</h3>
+                        </div>
+                        <div
+                            class="faq-icon w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-primary-green/10">
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-6">
+                        <div class="pl-14">
+                            <p class="text-gray-300 leading-relaxed">
+                                В стоимость входит <span class="text-primary-green font-semibold">полный комплекс
+                                    услуг</span>:
+                                индивидуальные занятия с преподавателем, все учебные материалы,
+                                участие в будкэмпе, стажировка в IT-компании, помощь с трудоустройством
+                                и пожизненная поддержка выпускников.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA блок -->
+            <div
+                class="mt-16 text-center bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">Остались вопросы?</h3>
+                <p class="text-gray-300 mb-6">Свяжитесь с нами и мы с радостью на них ответим</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openModal()"
+                        class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark px-8 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300">
+                        Записаться на консультацию
+                    </button>
+                    <a href="contact.html"
+                        class="border border-primary-green text-primary-green px-8 py-3 rounded-full font-bold hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                        Написать нам
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
         <div class="max-w-7xl mx-auto px-6">
@@ -531,32 +1075,49 @@
                 <div>
                     <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
                     <ul class="space-y-2">
-                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
-                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
-                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                        <li><a href="prices.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a>
+                        </li>
+                        <li><a href="courses.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">О
+                                нас</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
                     <ul class="space-y-2">
-                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
-                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
-                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
-                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                        <li><a href="faq.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a>
+                        </li>
+                        <li><a href="offer.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор
+                                оферты</a></li>
+                        <li><a href="privacy.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика
+                                конфиденциальности</a></li>
+                        <li><a href="contact.html"
+                                class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -570,76 +1131,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Карусели
-        let currentTeacher = 0;
-        let currentStudent = 0;
-        
-        function updateTeacherCarousel() {
-            const carousel = document.getElementById('teachersCarousel');
-            const indicators = [
-                document.getElementById('teacherIndicator0'),
-                document.getElementById('teacherIndicator1')
-            ];
-            
-            carousel.style.transform = `translateX(-${currentTeacher * 100}%)`;
-            
-            indicators.forEach((indicator, index) => {
-                if (index === currentTeacher) {
-                    indicator.classList.remove('bg-primary-green/30');
-                    indicator.classList.add('bg-primary-green');
-                } else {
-                    indicator.classList.remove('bg-primary-green');
-                    indicator.classList.add('bg-primary-green/30');
-                }
-            });
-        }
-        
-        function updateStudentCarousel() {
-            const carousel = document.getElementById('studentsCarousel');
-            const indicators = [
-                document.getElementById('studentIndicator0'),
-                document.getElementById('studentIndicator1'),
-                document.getElementById('studentIndicator2')
-            ];
-            
-            carousel.style.transform = `translateX(-${currentStudent * 100}%)`;
-            
-            indicators.forEach((indicator, index) => {
-                if (index === currentStudent) {
-                    indicator.classList.remove('bg-primary-green/30');
-                    indicator.classList.add('bg-primary-green');
-                } else {
-                    indicator.classList.remove('bg-primary-green');
-                    indicator.classList.add('bg-primary-green/30');
-                }
-            });
-        }
-        
-        function nextTeacher() {
-            currentTeacher = (currentTeacher + 1) % 2;
-            updateTeacherCarousel();
-        }
-        
-        function previousTeacher() {
-            currentTeacher = (currentTeacher - 1 + 2) % 2;
-            updateTeacherCarousel();
-        }
-        
-        function nextStudent() {
-            currentStudent = (currentStudent + 1) % 3;
-            updateStudentCarousel();
-        }
-        
-        function previousStudent() {
-            currentStudent = (currentStudent - 1 + 3) % 3;
-            updateStudentCarousel();
-        }
-        
-        // Автоматическое переключение каруселей
-        setInterval(nextTeacher, 5000);
-        setInterval(nextStudent, 4000);
-    </script>
 </body>
 
 </html>

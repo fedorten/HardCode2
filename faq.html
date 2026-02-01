@@ -5,124 +5,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - HardCode</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        }
+                    },
+                    backgroundSize: {
+                        '400%': '400% 400%'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <ul class="nav-links flex space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-
-        <section class="faq-content">
-            <div class="faq-item">
-                <h3>Кому подходит курс HardCode?</h3>
-                <p>Наш курс предназначен для взрослых людей, которые серьезно настроены научиться программировать и
-                    найти работу в IT. Мы принимаем как полных новичков, так и тех, у кого уже есть базовые знания.</p>
+    <main class="pt-20">
+        <!-- Hero секция -->
+        <section class="faq-hero min-h-screen flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+            <!-- Анимированный фон -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-float"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse"></div>
             </div>
-
-            <div class="faq-item">
-                <h3>Сколько длится обучение?</h3>
-                <p>Обучение занимает от 3 до 4 месяцев в зависимости от вашего начального уровня. Для полных новичков
-                    может потребоваться дополнительный месяц на освоение основ.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Что такое будкэмп?</h3>
-                <p>Будкэмп - это интенсивный период обучения (2 недели), во время которого вы решаете реальные боевые
-                    задачи по 4 часа в день. Это помогает быстро набраться опыта и уверенности.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Где проходит стажировка?</h3>
-                <p>Мы сотрудничаем с реальными IT-компаниями, которые берут наших студентов на стажировку. Вы будете
-                    работать над настоящими проектами и получать реальный опыт.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Гарантируете ли вы трудоустройство?</h3>
-                <p>В VIP-пакете входит гарантия трудоустройства. Мы помогаем с резюме, проводим подготовку к
-                    собеседованиям и даем рекомендации в компании-партнеры.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Какие технологии изучаются на курсе?</h3>
-                <p>Мы изучаем современные технологии бэкэнд разработки: языки программирования, базы данных, API,
-                    фреймворки, системы контроля версий и тестирование.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Можно ли оплатить обучение в рассрочку?</h3>
-                <p>Да, мы предлагаем гибкие условия оплаты, включая рассрочку и возможность оплаты после первого месяца
-                    обучения.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Что нужно для начала обучения?</h3>
-                <p>Вам нужен компьютер с доступом в интернет и желание учиться. Все необходимое программное обеспечение
-                    мы предоставляем в процессе обучения.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Как записаться на курс?</h3>
-                <p>Заполните форму записи на любой странице нашего сайта. Мы свяжемся с вами для обсуждения деталей и
-                    подбора подходящего пакета обучения.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>Есть ли возврат средств?</h3>
-                <p>Да, вы можете вернуть средства в течение 7 дней после начала курса, если по какой-то причине решите,
-                    что обучение вам не подходит.</p>
+            
+            <div class="hero-content text-center relative z-10 max-w-5xl px-6">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%] leading-tight">
+                    Часто задаваемые вопросы
+                </h1>
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Ответы на самые популярные вопросы о нашем курсе
+                </p>
             </div>
         </section>
 
-        <section class="contact-section">
-            <h2>Остались вопросы?</h2>
-            <p>Свяжитесь с нами и мы с радостью на них ответим</p>
-            <button class="cta-button" onclick="window.location.href='contact.html'">Связаться с нами</button>
+        <!-- FAQ секция с аккордеоном -->
+        <section class="faq-section py-20">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="space-y-4">
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Кому подходит курс HardCode?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Наш курс предназначен для взрослых людей, которые серьезно настроены научиться программировать и 
+                                найти работу в IT. Мы принимаем как полных новичков, так и тех, у кого уже есть базовые знания.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Сколько длится обучение?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Обучение занимает от 3 до 4 месяцев в зависимости от вашего начального уровня. Для полных новичков 
+                                может потребоваться дополнительный месяц на освоение основ.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Что такое будкэмп?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Будкэмп - это интенсивный период обучения (2 недели), во время которого вы решаете реальные боевые 
+                                задачи по 4 часа в день. Это помогает быстро набраться опыта и уверенности.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Где проходит стажировка?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Мы сотрудничаем с реальными IT-компаниями, которые берут наших студентов на стажировку. Вы будете 
+                                работать над настоящими проектами и получать реальный опыт.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Гарантируете ли вы трудоустройство?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                В VIP-пакете входит гарантия трудоустройства. Мы помогаем с резюме, проводим подготовку к 
+                                собеседованиям и даем рекомендации в компании-партнеры.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Какие технологии изучаются на курсе?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Мы изучаем современные технологии бэкэнд разработки: языки программирования, базы данных, API, 
+                                фреймворки, системы контроля версий и тестирование.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Можно ли оплатить обучение в рассрочку?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Да, мы предлагаем гибкие условия оплаты, включая рассрочку и возможность оплаты после первого месяца 
+                                обучения.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Что нужно для начала обучения?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Вам нужен компьютер с доступом в интернет и желание учиться. Все необходимое программное обеспечение 
+                                мы предоставляем в процессе обучения.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Как записаться на курс?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Заполните форму записи на любой странице нашего сайта. Мы свяжемся с вами для обсуждения деталей и 
+                                подбора подходящего пакета обучения.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/20 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-green/40">
+                        <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between hover:text-primary-green transition-colors duration-300" onclick="toggleFAQ(this)">
+                            <span class="text-lg font-semibold">Есть ли возврат средств?</span>
+                            <div class="faq-icon transition-transform duration-300">
+                                <i class="fas fa-chevron-down text-primary-green"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4">
+                            <p class="text-text-secondary leading-relaxed">
+                                Да, вы можете вернуть средства в течение 7 дней после начала курса, если по какой-то причине решите, 
+                                что обучение вам не подходит.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секция -->
+        <section class="contact-section py-20 bg-gradient-to-b from-bg-dark to-bg-darker">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">
+                    Остались вопросы?
+                </h2>
+                <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                    Свяжитесь с нами и мы с радостью на них ответим
+                </p>
+                <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-primary-green to-dark-green text-bg-dark border-none px-12 py-4 text-lg font-bold rounded-full cursor-pointer transition-all duration-300 uppercase tracking-wider relative overflow-hidden group hover:shadow-2xl hover:shadow-primary-green/30 hover:-translate-y-2">
+                    <span class="relative z-10">Связаться с нами</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                </button>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
+                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-primary-green">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 HardCode. Все права защищены.</p>
         </div>
     </footer>
 

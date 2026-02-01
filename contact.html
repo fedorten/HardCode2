@@ -5,157 +5,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - HardCode</title>
-    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#00ff88',
+                        'dark-green': '#00cc66',
+                        'neon-green': '#00ffaa',
+                        'bg-dark': '#0a0a0a',
+                        'bg-darker': '#050505',
+                        'bg-light': '#1a1a1a',
+                        'text-secondary': '#b0b0b0'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 255, 136, 0.6)' }
+                        }
+                    },
+                    backgroundSize: {
+                        '400%': '400% 400%'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <header>
-        <nav>
+<body class="font-inter bg-bg-dark text-white">
+    <header class="fixed top-0 w-full bg-bg-dark/95 backdrop-blur-xl border-b border-primary-green/20 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="logo">
-                <h1>HardCode</h1>
+                <h1 class="text-3xl font-black bg-gradient-to-r from-primary-green to-dark-green bg-clip-text text-transparent">HardCode</h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="courses.html">Курс</a></li>
-                <li><a href="about.html">О нас</a></li>
+            <ul class="nav-links flex space-x-8">
+                <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Главная<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Цены<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">Курс<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
+                <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-all duration-300 font-medium relative group">О нас<span class="absolute bottom-[-5px] left-0 w-0 h-0.5 bg-gradient-to-r from-primary-green to-dark-green transition-all duration-300 group-hover:w-full"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="contact-hero">
-            <h1>Свяжитесь с нами</h1>
-            <p>Мы готовы ответить на ваши вопросы</p>
-        </section>
-
-        <section class="contact-content">
-            <div class="contact-info">
-                <h2>Наши контакты</h2>
-
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <p>info@hardcode.ru</p>
-                    <p>По общим вопросам и сотрудничеству</p>
-                </div>
-
-                <div class="contact-item">
-                    <h3>Telegram</h3>
-                    <p>@hardcode_support</p>
-                    <p>Быстрая поддержка и консультации</p>
-                </div>
-
+    <main class="pt-20">
+        <section class="contact-hero min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-bg-dark to-bg-darker relative overflow-hidden">
+            <!-- Анимированный фон -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary-green/5 rounded-full blur-3xl animate-float"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute top-1/3 right-1/4 w-48 h-48 bg-dark-green/3 rounded-full blur-2xl animate-float" style="animation-delay: 2s"></div>
             </div>
-
-            <div class="contact-form">
-                <h2>Напишите нам</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="contact-name">Ваше имя:</label>
-                        <input type="text" id="contact-name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-email">Email:</label>
-                        <input type="email" id="contact-email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-phone">Телефон:</label>
-                        <input type="tel" id="contact-phone" name="phone" placeholder="+7 (999) 123-45-67">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-subject">Тема сообщения:</label>
-                        <select id="contact-subject" name="subject">
-                            <option value="general">Общий вопрос</option>
-                            <option value="course">Информация о курсе</option>
-                            <option value="payment">Вопросы оплаты</option>
-                            <option value="technical">Техническая поддержка</option>
-                            <option value="partnership">Сотрудничество</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-message">Сообщение:</label>
-                        <textarea id="contact-message" name="message" rows="5" placeholder="Опишите ваш вопрос..."
-                            required></textarea>
-                    </div>
-
-                    <button type="submit">Отправить сообщение</button>
-                </form>
+            
+            <div class="text-center relative z-10 max-w-4xl px-6">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent leading-tight animate-gradient bg-[length:400%_400%]">
+                    Свяжитесь с нами
+                </h1>
+                <p class="text-xl md:text-2xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Мы готовы ответить на ваши вопросы
+                </p>
             </div>
         </section>
 
-        <section class="working-hours">
-            <h2>Время работы</h2>
-            <div class="hours-grid">
-                <div class="hours-item">
-                    <h3>Поддержка</h3>
-                    <p>Пн-Пт: 10:00 - 19:00 (МСК)</p>
-                    <p>Сб-Вс: выходной</p>
-                </div>
-                <div class="hours-item">
-                    <h3>Занятия</h3>
-                    <p>Пн-Сб: по индивидуальному графику</p>
-                    <p>Вс: отдых</p>
-                </div>
-                <div class="hours-item">
-                    <h3>Экстренная связь</h3>
-                    <p>Telegram: 24/7</p>
-                    <p>Срочные вопросы по обучению</p>
+        <section class="py-20 bg-gradient-to-b from-bg-dark via-bg-light to-bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="contact-info">
+                        <h2 class="text-4xl font-black mb-8 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Наши контакты</h2>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary-green/10 transition-all duration-300">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center">
+                                        <i class="fas fa-envelope text-bg-dark text-xl"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-neon-green">Email</h3>
+                                </div>
+                                <p class="text-white font-semibold mb-2">info@hardcode.ru</p>
+                                <p class="text-text-secondary">По общим вопросам и сотрудничеству</p>
+                            </div>
+
+                            <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary-green/10 transition-all duration-300">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center">
+                                        <i class="fab fa-telegram text-bg-dark text-xl"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-neon-green">Telegram</h3>
+                                </div>
+                                <p class="text-white font-semibold mb-2">@hardcode_support</p>
+                                <p class="text-text-secondary">Быстрая поддержка и консультации</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h2 class="text-4xl font-black mb-8 bg-gradient-to-r from-primary-green to-neon-green bg-clip-text text-transparent">Напишите нам</h2>
+                        <form id="contact-form" class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 backdrop-blur-sm">
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="contact-name" class="block mb-2 text-primary-green font-semibold">Ваше имя:</label>
+                                    <input type="text" id="contact-name" name="name" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                                </div>
+
+                                <div>
+                                    <label for="contact-email" class="block mb-2 text-primary-green font-semibold">Email:</label>
+                                    <input type="email" id="contact-email" name="email" required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                                </div>
+
+                                <div>
+                                    <label for="contact-phone" class="block mb-2 text-primary-green font-semibold">Телефон:</label>
+                                    <input type="tel" id="contact-phone" name="phone" placeholder="+7 (999) 123-45-67" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                                </div>
+
+                                <div>
+                                    <label for="contact-subject" class="block mb-2 text-primary-green font-semibold">Тема сообщения:</label>
+                                    <select id="contact-subject" name="subject" class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300">
+                                        <option value="general">Общий вопрос</option>
+                                        <option value="course">Информация о курсе</option>
+                                        <option value="payment">Вопросы оплаты</option>
+                                        <option value="technical">Техническая поддержка</option>
+                                        <option value="partnership">Сотрудничество</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="contact-message" class="block mb-2 text-primary-green font-semibold">Сообщение:</label>
+                                    <textarea id="contact-message" name="message" rows="5" placeholder="Опишите ваш вопрос..." required class="w-full px-4 py-3 bg-bg-dark border border-primary-green/30 rounded-xl text-white placeholder-text-secondary focus:outline-none focus:border-primary-green focus:shadow-lg focus:shadow-primary-green/20 transition-all duration-300"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-gradient-to-r from-primary-green to-dark-green text-bg-dark py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary-green/30">
+                                    Отправить сообщение
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="social-links">
-            <h2>Мы в социальных сетях</h2>
-            <div class="social-grid">
-                <div class="social-item">
-                    <h3>Telegram</h3>
-                    <p>@hardcode_school</p>
+        <section class="py-20 bg-gradient-to-b from-bg-darker to-bg-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-center mb-12 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">Время работы</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-headset text-bg-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-4">Поддержка</h3>
+                        <p class="text-white font-semibold mb-2">Пн-Пт: 10:00 - 19:00 (МСК)</p>
+                        <p class="text-text-secondary">Сб-Вс: выходной</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-calendar-alt text-bg-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-4">Занятия</h3>
+                        <p class="text-white font-semibold mb-2">Пн-Сб: по индивидуальному графику</p>
+                        <p class="text-text-secondary">Вс: отдых</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-exclamation-triangle text-bg-dark text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-4">Экстренная связь</h3>
+                        <p class="text-white font-semibold mb-2">Telegram: 24/7</p>
+                        <p class="text-text-secondary">Срочные вопросы по обучению</p>
+                    </div>
                 </div>
-                <div class="social-item">
-                    <h3>YouTube</h3>
-                    <p>HardCode School</p>
-                </div>
-                <div class="social-item">
-                    <h3>GitHub</h3>
-                    <p>hardcode-school</p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-b from-bg-dark to-bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-center mb-12 bg-gradient-to-r from-primary-green via-neon-green to-primary-green bg-clip-text text-transparent animate-gradient bg-[length:400%_400%]">Мы в социальных сетях</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2 group cursor-pointer">
+                        <div class="w-20 h-20 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-telegram text-bg-dark text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-2">Telegram</h3>
+                        <p class="text-text-secondary">@hardcode_school</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2 group cursor-pointer">
+                        <div class="w-20 h-20 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-youtube text-bg-dark text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-2">YouTube</h3>
+                        <p class="text-text-secondary">HardCode School</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-primary-green/10 to-dark-green/10 border border-primary-green/30 rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-primary-green/20 transition-all duration-300 hover:-translate-y-2 group cursor-pointer">
+                        <div class="w-20 h-20 bg-gradient-to-r from-primary-green to-dark-green rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-github text-bg-dark text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neon-green mb-2">GitHub</h3>
+                        <p class="text-text-secondary">hardcode-school</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>HardCode</h4>
-                <p>Онлайн школа хардкорной бэкэнд разработки</p>
+    <footer class="bg-bg-darker border-t border-primary-green/20 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-primary-green mb-4">HardCode</h4>
+                    <p class="text-text-secondary">Онлайн школа хардкорной бэкэнд разработки</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Навигация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Главная</a></li>
+                        <li><a href="prices.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Цены</a></li>
+                        <li><a href="courses.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Курс</a></li>
+                        <li><a href="about.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">О нас</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Информация</h4>
+                    <ul class="space-y-2">
+                        <li><a href="faq.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">FAQ</a></li>
+                        <li><a href="offer.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Договор оферты</a></li>
+                        <li><a href="privacy.html" class="text-text-secondary hover:text-primary-green transition-colors duration-300">Политика конфиденциальности</a></li>
+                        <li><a href="contact.html" class="text-primary-green transition-colors duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-primary-green mb-4">Следите за нами</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary-green/20 rounded-full flex items-center justify-center text-primary-green hover:bg-primary-green hover:text-bg-dark transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Навигация</h4>
-                <ul>
-                    <li><a href="prices.html">Цены</a></li>
-                    <li><a href="courses.html">Курс</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                </ul>
+            <div class="mt-8 pt-8 border-t border-primary-green/10 text-center text-text-secondary">
+                <p>&copy; 2026 HardCode. Все права защищены.</p>
             </div>
-
-            <div class="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="offer.html">Договор оферты</a></li>
-                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 HardCode. Все права защищены.</p>
         </div>
     </footer>
 
